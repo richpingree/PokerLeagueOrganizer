@@ -1607,8 +1607,8 @@
                                     <constraint firstAttribute="height" constant="60" id="CTg-zp-VSC"/>
                                     <constraint firstAttribute="width" constant="60" id="YHc-7k-Wyf"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
-                                <state key="normal" title="Previous" backgroundImage="Buttonimage.png">
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
+                                <state key="normal" title="&lt;&lt;" backgroundImage="Buttonimage.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
@@ -1617,8 +1617,8 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="9VV-qI-rjo"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
-                                <state key="normal" title="Play" backgroundImage="Buttonimage.png">
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
+                                <state key="normal" title="&gt;" backgroundImage="Buttonimage.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
@@ -1630,12 +1630,13 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="7cr-5i-afK"/>
                                 </constraints>
-                                <state key="normal" title="Next" backgroundImage="Buttonimage.png">
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
+                                <state key="normal" title="&gt;&gt;" backgroundImage="Buttonimage.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ante" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5UA-CT-d9a">
-                                <rect key="frame" x="274" y="258" width="52" height="40"/>
+                                <rect key="frame" x="274" y="268" width="52" height="30"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="25"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -1740,8 +1741,8 @@
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="AK1-sS-iee"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="12"/>
-                                <state key="normal" title="Pause" backgroundImage="Buttonimage.png">
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="20"/>
+                                <state key="normal" title="||" backgroundImage="Buttonimage.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                             </button>
@@ -1787,7 +1788,7 @@
                             <constraint firstItem="b7y-96-O0T" firstAttribute="trailing" secondItem="eUT-Gu-G3K" secondAttribute="trailing" id="ach-IX-xp5"/>
                             <constraint firstItem="b7y-96-O0T" firstAttribute="leading" secondItem="eUT-Gu-G3K" secondAttribute="leading" id="d2P-qy-A8y"/>
                             <constraint firstItem="an9-63-vfV" firstAttribute="top" secondItem="b7y-96-O0T" secondAttribute="top" id="fBN-Qz-4X6"/>
-                            <constraint firstItem="5UA-CT-d9a" firstAttribute="top" secondItem="dJ7-58-spg" secondAttribute="bottom" constant="8" id="fEQ-G8-prA"/>
+                            <constraint firstItem="5UA-CT-d9a" firstAttribute="top" secondItem="dJ7-58-spg" secondAttribute="bottom" constant="18" id="fEQ-G8-prA"/>
                             <constraint firstItem="dJ7-58-spg" firstAttribute="leading" secondItem="eUT-Gu-G3K" secondAttribute="trailing" constant="20" id="gYz-Un-TI3"/>
                             <constraint firstItem="u6X-R9-jju" firstAttribute="leading" secondItem="dJ7-58-spg" secondAttribute="trailing" constant="20" id="haE-nM-JZi"/>
                             <constraint firstItem="u6X-R9-jju" firstAttribute="trailing" secondItem="SSd-Lw-80D" secondAttribute="trailing" id="kaq-a2-pWE"/>
@@ -1808,6 +1809,8 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
                     <connections>
                         <outlet property="bTimer" destination="Fqm-Sr-i7E" id="bP1-L3-4bQ"/>
+                        <outlet property="pause" destination="dJ7-58-spg" id="kiL-ic-dfz"/>
+                        <outlet property="play" destination="eUT-Gu-G3K" id="Gl2-lV-g2i"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PO5-oJ-1In" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -15,12 +15,14 @@ class TimerViewController: UIViewController {
     var timer = NSTimer()
     var count:NSTimeInterval = 120
     
+    @IBOutlet weak var play: UIButton!
+    @IBOutlet weak var pause: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        pause.hidden = true
         //timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
         
     }
@@ -46,6 +48,7 @@ class TimerViewController: UIViewController {
     
     //play button action
     @IBAction func play(sender: AnyObject) {
+        pause.hidden = false
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
     }
 
