@@ -204,6 +204,9 @@
                                 <state key="normal" title="LOGIN" backgroundImage="Buttonimage.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="loginBtn:" destination="6aE-Mw-SQA" eventType="touchUpInside" id="VJE-j7-bLf"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Register" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2rv-sB-48d">
                                 <rect key="frame" x="268" y="84" width="64" height="21"/>
@@ -239,6 +242,14 @@
                             <constraint firstItem="FIL-Sc-GGb" firstAttribute="top" secondItem="BVm-vE-a4g" secondAttribute="bottom" constant="8" symbolic="YES" id="ta5-RK-Wcn"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="confirmEmailTxt" destination="BVm-vE-a4g" id="l19-Ev-oqU"/>
+                        <outlet property="confirmPassTxt" destination="Twz-oP-Xc4" id="RH5-f3-orX"/>
+                        <outlet property="emailTxt" destination="rUF-6Y-ltz" id="NBZ-Wm-FzL"/>
+                        <outlet property="loginBtn" destination="FYk-Bj-CE2" id="xgw-dq-Ysc"/>
+                        <outlet property="passTxt" destination="FIL-Sc-GGb" id="R5g-Ks-XQe"/>
+                        <outlet property="userTxt" destination="Po1-fE-R0X" id="Yr5-ah-IMR"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1P0-gp-yXM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

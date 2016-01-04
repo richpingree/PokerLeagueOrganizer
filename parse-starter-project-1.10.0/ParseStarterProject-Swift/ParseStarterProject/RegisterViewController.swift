@@ -10,6 +10,12 @@ import UIKit
 
 class RegisterViewController: UIViewController {
 
+    @IBOutlet weak var userTxt: UITextField!
+    @IBOutlet weak var emailTxt: UITextField!
+    @IBOutlet weak var confirmEmailTxt: UITextField!
+    @IBOutlet weak var passTxt: UITextField!
+    @IBOutlet weak var confirmPassTxt: UITextField!
+    @IBOutlet weak var loginBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -22,6 +28,9 @@ class RegisterViewController: UIViewController {
     }
     
 
+    @IBAction func loginBtn(sender: AnyObject) {
+        
+    }
     /*
     // MARK: - Navigation
 
