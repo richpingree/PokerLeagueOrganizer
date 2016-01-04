@@ -13,6 +13,12 @@ import Parse
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var LoginUserTxt: UITextField!
+    @IBOutlet weak var LoginPassTxt: UITextField!
+    @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var passBtn: UIButton!
+    @IBOutlet weak var registerBtn: UIButton!
+ 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -23,6 +29,18 @@ class ViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func loginBtn(sender: AnyObject) {
+        
+    }
+
+    @IBAction func passBtn(sender: AnyObject) {
+        
+    }
+    
+    @IBAction func registerBtn(sender: AnyObject) {
+        
     }
     
     }
