@@ -17,6 +17,7 @@ class TimerViewController: UIViewController {
     
     @IBOutlet weak var play: UIButton!
     @IBOutlet weak var pause: UIButton!
+    @IBOutlet weak var blindsBtn: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()

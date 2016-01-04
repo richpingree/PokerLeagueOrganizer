@@ -12,6 +12,12 @@
 		709D6AF41C1CAC0700983DF3 /* Buttonimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 709D6AF31C1CAC0700983DF3 /* Buttonimage.png */; };
 		709D6AF61C1CAE6B00983DF3 /* redbuttonimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 709D6AF51C1CAE6B00983DF3 /* redbuttonimage.png */; };
 		70CB27FE1C319B4400EA610E /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CB27FD1C319B4400EA610E /* TimerViewController.swift */; };
+		70CB28001C32C86900EA610E /* BlindsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CB27FF1C32C86900EA610E /* BlindsViewController.swift */; };
+		70D020C41C382E4400352726 /* TournamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D020C31C382E4400352726 /* TournamentViewController.swift */; };
+		70D020C61C382E8600352726 /* TournamentFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D020C51C382E8600352726 /* TournamentFormViewController.swift */; };
+		70D020C81C382ED900352726 /* TournamentDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D020C71C382ED900352726 /* TournamentDetailsViewController.swift */; };
+		70D020CA1C382F7A00352726 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D020C91C382F7A00352726 /* PlayerViewController.swift */; };
+		70D020CC1C382FC000352726 /* PlayerFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D020CB1C382FC000352726 /* PlayerFormViewController.swift */; };
 		814C3ACA1B69877600E307BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC61B69877600E307BB /* Main.storyboard */; };
 		814C3ACB1B69877600E307BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC81B69877600E307BB /* Images.xcassets */; };
 		81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814A1A49DA1800E65899 /* AppDelegate.swift */; };
@@ -30,6 +36,12 @@
 		709D6AF31C1CAC0700983DF3 /* Buttonimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Buttonimage.png; sourceTree = "<group>"; };
 		709D6AF51C1CAE6B00983DF3 /* redbuttonimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redbuttonimage.png; sourceTree = "<group>"; };
 		70CB27FD1C319B4400EA610E /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
+		70CB27FF1C32C86900EA610E /* BlindsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlindsViewController.swift; sourceTree = "<group>"; };
+		70D020C31C382E4400352726 /* TournamentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentViewController.swift; sourceTree = "<group>"; };
+		70D020C51C382E8600352726 /* TournamentFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentFormViewController.swift; sourceTree = "<group>"; };
+		70D020C71C382ED900352726 /* TournamentDetailsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentDetailsViewController.swift; sourceTree = "<group>"; };
+		70D020C91C382F7A00352726 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
+		70D020CB1C382FC000352726 /* PlayerFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerFormViewController.swift; sourceTree = "<group>"; };
 		814C3AC71B69877600E307BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		814C3AC81B69877600E307BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		814C3AC91B69877600E307BB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -102,6 +114,12 @@
 				81BA814C1A49DA1800E65899 /* ViewController.swift */,
 				814C3AC61B69877600E307BB /* Main.storyboard */,
 				70CB27FD1C319B4400EA610E /* TimerViewController.swift */,
+				70CB27FF1C32C86900EA610E /* BlindsViewController.swift */,
+				70D020C31C382E4400352726 /* TournamentViewController.swift */,
+				70D020C51C382E8600352726 /* TournamentFormViewController.swift */,
+				70D020C71C382ED900352726 /* TournamentDetailsViewController.swift */,
+				70D020C91C382F7A00352726 /* PlayerViewController.swift */,
+				70D020CB1C382FC000352726 /* PlayerFormViewController.swift */,
 			);
 			path = ParseStarterProject;
 			sourceTree = "<group>";
@@ -223,7 +241,13 @@
 			files = (
 				70CB27FE1C319B4400EA610E /* TimerViewController.swift in Sources */,
 				81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */,
+				70D020C81C382ED900352726 /* TournamentDetailsViewController.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
+				70D020C61C382E8600352726 /* TournamentFormViewController.swift in Sources */,
+				70D020CA1C382F7A00352726 /* PlayerViewController.swift in Sources */,
+				70D020C41C382E4400352726 /* TournamentViewController.swift in Sources */,
+				70D020CC1C382FC000352726 /* PlayerFormViewController.swift in Sources */,
+				70CB28001C32C86900EA610E /* BlindsViewController.swift in Sources */,
 				700820911C192C2700D6653D /* Background.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
