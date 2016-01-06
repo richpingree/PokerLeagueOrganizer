@@ -21,7 +21,12 @@ class ViewController: UIViewController {
  
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        //check if connected to network
+        if Reachability.isConnectedNetwork(){
+            NSLog("Is connected to the Internet!")
+        }else{
+            NSLog("Not connected")
+        }
         
         
     }
