@@ -58,9 +58,9 @@ class RegisterViewController: UIViewController {
     //register user
     func signUp() {
         let user = PFUser()
-        user.username = userTxt!.text
-        user.email = emailTxt!.text
-        user.password = passTxt!.text
+        user.username = self.userTxt.text
+        user.email = self.emailTxt.text
+        user.password = self.passTxt.text
         
         user.signUpInBackgroundWithBlock{
             (success: Bool, error: NSError?) -> Void in
@@ -77,6 +77,7 @@ class RegisterViewController: UIViewController {
 
     @IBAction func loginBtn(sender: AnyObject) {
         checkFieldComplete()
+        signUp()
     }
     /*
     // MARK: - Navigation
