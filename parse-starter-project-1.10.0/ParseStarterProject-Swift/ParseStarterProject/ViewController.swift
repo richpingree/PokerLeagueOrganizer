@@ -21,6 +21,9 @@ class ViewController: UIViewController {
  
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        LoginUserTxt.text = nil
+        LoginPassTxt.text = nil
         //check if connected to network
         if Reachability.isConnectedNetwork(){
             NSLog("Is connected to the Internet!")
@@ -37,7 +40,16 @@ class ViewController: UIViewController {
     }
     
     @IBAction func loginBtn(sender: AnyObject) {
-        
+        PFUser.logInWithUsernameInBackground(self.LoginUserTxt.text!, password: self.LoginPassTxt.text!){
+            (user: PFUser?, error: NSError?) -> Void in
+            if user != nil{
+                NSLog("Login Successful")
+                
+                self.performSegueWithIdentifier("login", sender: self)
+            }else{
+                _ = UIAlertView(title: "Ooops", message: "Username is already taken", delegate: nil, cancelButtonTitle: "OK")
+            }
+        }
     }
 
     @IBAction func passBtn(sender: AnyObject) {

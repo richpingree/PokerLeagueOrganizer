@@ -70,6 +70,7 @@ class RegisterViewController: UIViewController {
                 alert.show()
             } else {
                 NSLog("Sign Up Success!")
+                self.performSegueWithIdentifier("register", sender: self)
             }
         }
     }
@@ -78,6 +79,8 @@ class RegisterViewController: UIViewController {
     @IBAction func loginBtn(sender: AnyObject) {
         checkFieldComplete()
         signUp()
+        
+        
     }
     /*
     // MARK: - Navigation

@@ -119,6 +119,7 @@
                         <outlet property="loginBtn" destination="63x-HP-QI6" id="GnN-dU-qwr"/>
                         <outlet property="passBtn" destination="M0W-Y9-zrn" id="YDR-Uc-14t"/>
                         <outlet property="registerBtn" destination="b2p-C1-Rla" id="tM0-eO-hIt"/>
+                        <segue destination="cEh-1A-wAB" kind="presentation" identifier="login" id="WS7-1M-QGb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -249,6 +250,7 @@
                         <outlet property="loginBtn" destination="FYk-Bj-CE2" id="xgw-dq-Ysc"/>
                         <outlet property="passTxt" destination="FIL-Sc-GGb" id="R5g-Ks-XQe"/>
                         <outlet property="userTxt" destination="Po1-fE-R0X" id="Yr5-ah-IMR"/>
+                        <segue destination="cEh-1A-wAB" kind="presentation" identifier="register" id="7md-pU-MSg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1P0-gp-yXM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1624,6 +1626,9 @@
                                 <state key="normal" title="&lt;&lt;" backgroundImage="Buttonimage.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="prevBtn:" destination="cEh-1A-wAB" eventType="touchUpInside" id="1ck-8t-WVd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUT-Gu-G3K">
                                 <rect key="frame" x="230" y="190" width="60" height="60"/>
@@ -1647,6 +1652,9 @@
                                 <state key="normal" title="&gt;&gt;" backgroundImage="Buttonimage.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="nextBtn:" destination="cEh-1A-wAB" eventType="touchUpInside" id="7sS-pV-Pni"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Ante" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5UA-CT-d9a">
                                 <rect key="frame" x="274" y="268" width="52" height="30"/>
@@ -1698,6 +1706,9 @@
                                 <state key="normal" title="RESET" backgroundImage="redbuttonimage.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="resetBtn:" destination="cEh-1A-wAB" eventType="touchUpInside" id="5UG-xm-Nw4"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UfJ-jp-tt7">
                                 <rect key="frame" x="390" y="450" width="60" height="60"/>
@@ -1709,9 +1720,12 @@
                                 <state key="normal" title="LOGOUT" backgroundImage="redbuttonimage.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="logoutBtn:" destination="cEh-1A-wAB" eventType="touchUpInside" id="Zqe-gK-ReX"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="an9-63-vfV">
-                                <rect key="frame" x="150" y="451" width="60" height="60"/>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="an9-63-vfV">
+                                <rect key="frame" x="150" y="452" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="60" id="CzQ-p0-p3T"/>
                                 </constraints>
@@ -1720,6 +1734,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="blindsBtn:" destination="cEh-1A-wAB" eventType="touchUpInside" id="gIO-DG-MYv"/>
                                     <segue destination="QbV-lL-mFB" kind="show" id="HAN-Dc-Hqr"/>
                                 </connections>
                             </button>
@@ -1730,6 +1745,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="rulesBtn:" destination="cEh-1A-wAB" eventType="touchUpInside" id="5uy-yH-07h"/>
                                     <segue destination="ddU-Hn-62q" kind="showDetail" id="qxE-Nk-xhG"/>
                                 </connections>
                             </button>
@@ -1758,6 +1774,9 @@
                                 <state key="normal" title="||" backgroundImage="Buttonimage.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="pause:" destination="cEh-1A-wAB" eventType="touchUpInside" id="WpX-9o-0jz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.38039215686274508" blue="0.015686274509803921" alpha="1" colorSpace="calibratedRGB"/>
@@ -1824,9 +1843,15 @@
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics" barStyle="black"/>
                     <connections>
                         <outlet property="bTimer" destination="Fqm-Sr-i7E" id="bP1-L3-4bQ"/>
-                        <outlet property="blindsBtn" destination="an9-63-vfV" id="scp-qk-Ghc"/>
+                        <outlet property="blindsBtn" destination="an9-63-vfV" id="bGC-kR-dGd"/>
+                        <outlet property="logoutBtn" destination="UfJ-jp-tt7" id="55V-mS-GId"/>
+                        <outlet property="nextBtn" destination="u6X-R9-jju" id="Rod-yR-dsm"/>
                         <outlet property="pause" destination="dJ7-58-spg" id="kiL-ic-dfz"/>
                         <outlet property="play" destination="eUT-Gu-G3K" id="Gl2-lV-g2i"/>
+                        <outlet property="prevBtn" destination="O6v-KU-JIK" id="e96-bd-gQe"/>
+                        <outlet property="resetBtn" destination="z2c-c7-fQ7" id="WU7-LZ-5lu"/>
+                        <outlet property="rulesBtn" destination="b7y-96-O0T" id="q4P-gO-RAl"/>
+                        <outlet property="userLabel" destination="ozM-0g-YgI" id="BFZ-Kb-G27"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PO5-oJ-1In" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2113,7 +2138,8 @@
         <image name="redbuttonimage.png" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="5NB-WT-R1A"/>
+        <segue reference="wfz-Az-77q"/>
+        <segue reference="WS7-1M-QGb"/>
         <segue reference="hob-Ip-mho"/>
     </inferredMetricsTieBreakers>
 </document>

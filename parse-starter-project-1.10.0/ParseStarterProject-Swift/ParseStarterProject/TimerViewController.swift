@@ -7,24 +7,36 @@
 //
 
 import UIKit
+import Parse
 
 class TimerViewController: UIViewController {
 
+    @IBOutlet weak var userLabel: UILabel!
     @IBOutlet weak var bTimer: UILabel!
     
     var timer = NSTimer()
     var count:NSTimeInterval = 120
     
+    @IBOutlet weak var prevBtn: UIButton!
     @IBOutlet weak var play: UIButton!
     @IBOutlet weak var pause: UIButton!
+    @IBOutlet weak var nextBtn: UIButton!
     @IBOutlet weak var blindsBtn: UIButton!
+    @IBOutlet weak var rulesBtn: UIButton!
+    @IBOutlet weak var resetBtn: UIButton!
+    @IBOutlet weak var logoutBtn: UIButton!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        pause.hidden = true
-        //timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
+        
+        if let pUserName = PFUser.currentUser()?["username"] as? String {
+            userLabel.text = "Welcome" + " " + pUserName
+        }
+        bTimer.text = timeString(count)
         
     }
     
@@ -47,13 +59,47 @@ class TimerViewController: UIViewController {
         return String(format:"%02i:%02i",minutes,Int(seconds))
     }
     
+    //previous button action
+    @IBAction func prevBtn(sender: AnyObject) {
+        
+    }
+    
     //play button action
     @IBAction func play(sender: AnyObject) {
-        pause.hidden = false
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
     }
-
-
+    
+    //pause button action
+    @IBAction func pause(sender: AnyObject) {
+        
+    }
+    
+    //next button action
+    @IBAction func nextBtn(sender: AnyObject) {
+        
+    }
+    
+    //blinds button action
+    @IBAction func blindsBtn(sender: AnyObject) {
+        
+    }
+    
+    //rules button action
+    @IBAction func rulesBtn(sender: AnyObject) {
+        
+    }
+    
+    //reset button action
+    @IBAction func resetBtn(sender: AnyObject) {
+        
+    }
+    
+    //logout button action
+    @IBAction func logoutBtn(sender: AnyObject) {
+        PFUser.logOut()
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
