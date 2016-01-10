@@ -7,13 +7,34 @@
 //
 
 import UIKit
+import Parse
 
-class PlayerViewController: UIViewController {
+class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+   
+    @IBOutlet weak var randomBtn: UIButton!
+    @IBOutlet weak var addBtn: UIButton!
+    
+    @IBOutlet weak var playerTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+
+    func tableView(playerTable: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(playerTable: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell:UITableViewCell = self.playerTable.dequeueReusableCellWithIdentifier("playerCell")! as UITableViewCell
+        
+        //cell.textLabel?.text = self.items[indexPath.row]
+        
+        return cell    }
+    
+    func tableView(playerTable: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
     }
 
     override func didReceiveMemoryWarning() {

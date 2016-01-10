@@ -6,14 +6,33 @@
 //  Copyright © 2016 Parse. All rights reserved.
 //
 
+import Foundation
 import UIKit
+import Parse
 
-class TournamentViewController: UIViewController {
+class TournamentViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var addBtn: UIButton!
+    @IBOutlet weak var tourneyTable: UITableView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+
+    func tableView(tourneyTable: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 0
+    }
+    
+    func tableView(tourneyTable: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell:UITableViewCell = self.tourneyTable.dequeueReusableCellWithIdentifier("tourneyCell")! as UITableViewCell
+        
+        //cell.textLabel?.text = self.items[indexPath.row]
+        
+        return cell    }
+    
+    func tableView(tourneyTable: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -21,6 +40,8 @@ class TournamentViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func addBtn(sender: AnyObject) {
+    }
 
     /*
     // MARK: - Navigation

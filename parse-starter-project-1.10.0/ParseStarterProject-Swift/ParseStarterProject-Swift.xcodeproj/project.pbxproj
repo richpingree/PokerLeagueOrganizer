@@ -20,6 +20,7 @@
 		70D020CC1C382FC000352726 /* PlayerFormViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D020CB1C382FC000352726 /* PlayerFormViewController.swift */; };
 		70D020D01C3A1AB800352726 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D020CF1C3A1AB800352726 /* RegisterViewController.swift */; };
 		70D020D21C3CB99A00352726 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D020D11C3CB99A00352726 /* Reachability.swift */; };
+		70D020D61C41F3A700352726 /* RulesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D020D51C41F3A700352726 /* RulesViewController.swift */; };
 		814C3ACA1B69877600E307BB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC61B69877600E307BB /* Main.storyboard */; };
 		814C3ACB1B69877600E307BB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 814C3AC81B69877600E307BB /* Images.xcassets */; };
 		81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81BA814A1A49DA1800E65899 /* AppDelegate.swift */; };
@@ -46,6 +47,7 @@
 		70D020CB1C382FC000352726 /* PlayerFormViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerFormViewController.swift; sourceTree = "<group>"; };
 		70D020CF1C3A1AB800352726 /* RegisterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		70D020D11C3CB99A00352726 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		70D020D51C41F3A700352726 /* RulesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RulesViewController.swift; sourceTree = "<group>"; };
 		814C3AC71B69877600E307BB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		814C3AC81B69877600E307BB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		814C3AC91B69877600E307BB /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 				70D020CB1C382FC000352726 /* PlayerFormViewController.swift */,
 				70D020CF1C3A1AB800352726 /* RegisterViewController.swift */,
 				70D020D11C3CB99A00352726 /* Reachability.swift */,
+				70D020D51C41F3A700352726 /* RulesViewController.swift */,
 			);
 			path = ParseStarterProject;
 			sourceTree = "<group>";
@@ -252,6 +255,7 @@
 				70D020C81C382ED900352726 /* TournamentDetailsViewController.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
 				70D020C61C382E8600352726 /* TournamentFormViewController.swift in Sources */,
+				70D020D61C41F3A700352726 /* RulesViewController.swift in Sources */,
 				70D020CA1C382F7A00352726 /* PlayerViewController.swift in Sources */,
 				70D020C41C382E4400352726 /* TournamentViewController.swift in Sources */,
 				70D020CC1C382FC000352726 /* PlayerFormViewController.swift in Sources */,
