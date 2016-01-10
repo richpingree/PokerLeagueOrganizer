@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import Parse
+import ObjectiveC
+
 
 
 class BlindsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
@@ -23,53 +25,71 @@ class BlindsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var doneBtn: UIButton!
     @IBOutlet weak var blindsTable: UITableView!
     
-    var blindArray = [blindClass]()
+    var blindArray : NSMutableArray = []
     
-    var items: [String] = ["Blind1", "Blind2", "Blind3"]
+    //var items: [String] = ["Blind1", "Blind2", "Blind3"]
     
-    class blindClass : NSObject {
-        var level : String
-        var time : NSTimeInterval
-        var ante : String
-        var sBlind : String
-        var bBlind : String
-        
-        init(level : String, time : NSTimeInterval, ante : String, sBlind : String, bBlind : String) {
-            self.level = level
-            self.time = time
-            self.ante = ante
-            self.sBlind = sBlind
-            self.bBlind = bBlind
-            
-        }
-        
-        func getAsString() -> String{
-            return level
-        }
-        
-    }
-    
-    func tableView(blindTable: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count
-    }
-    
-    func tableView(blindTable: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = self.blindsTable.dequeueReusableCellWithIdentifier("blindCell")! as UITableViewCell
-        
-        cell.textLabel?.text = self.items[indexPath.row]
-        
-        return cell    }
-    
-    func tableView(blindTable: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
-    }
-
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         blindsTable.delegate = self
+        blindsTable.dataSource = self
         self.blindsTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "blindCell")
+        loadData1()
+        
+    }
+    
+    
+    
+    func loadData1() {
+        
+        let query = PFQuery(className: "BlindLevel")
+        
+        query.orderByAscending("Time")
+        
+        query.findObjectsInBackgroundWithBlock { (objects:[PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                
+                //loop your objects array
+                for object in objects!{
+                    
+                    let blindLevel = object as PFObject
+                    //add your element into array
+                    self.blindArray.addObject(blindLevel)
+                }
+                self.blindsTable.reloadData()
+                
+            } else {
+                
+                //println( error?.userInfo )
+            }
+        }
+        
+    }
+    
+
+    func tableView(blindTable: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.blindArray.count
+    }
+    
+    func tableView(blindTable: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        let cell:UITableViewCell = self.blindsTable.dequeueReusableCellWithIdentifier("blindCell")! as UITableViewCell
+        
+        let tempObject = blindArray.objectAtIndex(indexPath.row) as! PFObject
+        
+        let timeString = "Time: " + (tempObject.objectForKey("Time") as? String)!
+        let smallString = "Small Blind: " + (tempObject.objectForKey("Small") as? String)!
+        let bigString = "Big Blind: " + (tempObject.objectForKey("Big") as? String)!
+        
+        cell.textLabel?.text = timeString + " " + smallString + " " + bigString
+        
+        return cell
+    }
+    
+    func tableView(blindTable: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
     }
 
@@ -84,12 +104,19 @@ class BlindsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     @IBAction func addBtn(sender: AnyObject) {
-        let newLevel = blindClass(level: "Level 1", time: 180, ante: anteInput.text!, sBlind: smallInput.text!, bBlind: bigInput.text!)
-        self.blindArray.append(newLevel)
-        let arrayString = "Small Blind:" + (newLevel.sBlind) + " " + "Big Blind: " + (newLevel.bBlind)
-        let arraycount = blindArray.count
-        NSLog(arrayString)
-        NSLog(String(arraycount))
+        let bLevel = PFObject(className: "BlindLevel")
+        bLevel["Time"] = timeInput.text
+        bLevel["Ante"] = anteInput.text
+        bLevel["Small"] = smallInput.text
+        bLevel["Big"] = bigInput.text
+        bLevel.saveInBackgroundWithBlock {
+            (success: Bool, error: NSError?) -> Void in
+            if (success) {
+                // The object has been saved.
+                
+            } else {
+                // There was a problem, check error.description
+            }
     }
 
     /*
