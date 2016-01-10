@@ -16,20 +16,51 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var addBtn: UIButton!
     
     @IBOutlet weak var playerTable: UITableView!
+    
+    var playerArray : NSMutableArray = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        playerTable.delegate = self
+        playerTable.dataSource = self
+        self.playerTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "playerCell")
+        loadPlayerData()
+    }
+    
+    func loadPlayerData(){
+        
+        let query = PFQuery(className: "Player")
+        
+        query.findObjectsInBackgroundWithBlock{
+            (objects:[PFObject]?, error:NSError?) -> Void in
+            if error == nil{
+                
+                //loop objects array
+                for object in objects!{
+                    let player = object as PFObject
+                    
+                    //add element into array
+                    self.playerArray.addObject(player)
+                }
+                self.playerTable.reloadData()
+                    
+            } else{
+                
+            }
+        }
     }
 
     func tableView(playerTable: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.playerArray.count
     }
     
     func tableView(playerTable: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = self.playerTable.dequeueReusableCellWithIdentifier("playerCell")! as UITableViewCell
         
-        //cell.textLabel?.text = self.items[indexPath.row]
+        let tempObject = playerArray.objectAtIndex(indexPath.row) as! PFObject
+        cell.textLabel?.text = tempObject.objectForKey("First") as? String
         
         return cell    }
     

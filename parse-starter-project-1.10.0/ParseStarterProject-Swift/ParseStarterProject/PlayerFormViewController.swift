@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class PlayerFormViewController: UIViewController {
 
@@ -23,6 +24,21 @@ class PlayerFormViewController: UIViewController {
     }
 
     @IBAction func saveBtn(sender: AnyObject) {
+        let newPlayer = PFObject(className: "Player")
+        newPlayer["First"] = firstNameInput.text
+        newPlayer["Last"] = lastNameInput.text
+        newPlayer["Phone"] = phoneNumberInput.text
+        newPlayer["Points"] = totalPointsInput.text
+        newPlayer["Earnings"] = totalEarningsInput.text
+        newPlayer.saveEventually{
+            (success: Bool, error: NSError?) -> Void in
+            if (success){
+                self.dismissViewControllerAnimated(true, completion: nil)
+            }else{
+                
+            }
+        }
+        
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

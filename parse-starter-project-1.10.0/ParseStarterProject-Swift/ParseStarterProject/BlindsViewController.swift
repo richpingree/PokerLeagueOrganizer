@@ -117,6 +117,7 @@ class BlindsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             } else {
                 // There was a problem, check error.description
             }
+        }
     }
 
     /*
