@@ -14,20 +14,53 @@ class TournamentViewController: UIViewController, UITableViewDelegate, UITableVi
 
     @IBOutlet weak var addBtn: UIButton!
     @IBOutlet weak var tourneyTable: UITableView!
+    
+    var tourneyArray : NSMutableArray = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        tourneyTable.delegate = self
+        tourneyTable.dataSource = self
+        self.tourneyTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "tourneyCell")
+        loadTourneyData()
+    }
+    
+    func loadTourneyData(){
+        
+        self.tourneyArray.removeAllObjects()
+        
+        let query = PFQuery(className: "Tournaments")
+        
+        query.findObjectsInBackgroundWithBlock {
+            (objects:[PFObject]?, error: NSError?) -> Void in
+            if error == nil{
+                
+                //loop objects array
+                for object in objects!{
+                    
+                    let tournament = object as PFObject
+                    //add into array
+                    self.tourneyArray.addObject(tournament)
+                }
+                self.tourneyTable.reloadData()
+                
+            } else{
+                
+            }
+        }
     }
 
     func tableView(tourneyTable: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.tourneyArray.count
     }
     
     func tableView(tourneyTable: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = self.tourneyTable.dequeueReusableCellWithIdentifier("tourneyCell")! as UITableViewCell
         
-        //cell.textLabel?.text = self.items[indexPath.row]
+        let tempObject = tourneyArray.objectAtIndex(indexPath.row) as! PFObject
+        cell.textLabel!.text = tempObject.objectForKey("Date") as? String
         
         return cell    }
     
@@ -41,6 +74,7 @@ class TournamentViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     @IBAction func addBtn(sender: AnyObject) {
+        loadTourneyData()
     }
 
     /*

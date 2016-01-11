@@ -27,7 +27,6 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var logoutBtn: UIButton!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -71,7 +70,7 @@ class TimerViewController: UIViewController {
     
     //pause button action
     @IBAction func pause(sender: AnyObject) {
-        
+        timer.invalidate()
     }
     
     //next button action

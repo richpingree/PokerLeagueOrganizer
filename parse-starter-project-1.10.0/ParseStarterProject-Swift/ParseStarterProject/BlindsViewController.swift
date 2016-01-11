@@ -36,7 +36,7 @@ class BlindsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Do any additional setup after loading the view.
         blindsTable.delegate = self
         blindsTable.dataSource = self
-        self.blindsTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "blindCell")
+        //self.blindsTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "blindCell")
         loadData1()
         
     }
@@ -44,6 +44,8 @@ class BlindsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     func loadData1() {
+        
+        self.blindArray.removeAllObjects()
         
         let query = PFQuery(className: "BlindLevel")
         
@@ -84,7 +86,8 @@ class BlindsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let smallString = "Small Blind: " + (tempObject.objectForKey("Small") as? String)!
         let bigString = "Big Blind: " + (tempObject.objectForKey("Big") as? String)!
         
-        cell.textLabel?.text = timeString + " " + smallString + " " + bigString
+        cell.textLabel?.text = timeString 
+        cell.detailTextLabel?.text = smallString + " " + bigString
         
         return cell
     }
@@ -113,7 +116,7 @@ class BlindsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             (success: Bool, error: NSError?) -> Void in
             if (success) {
                 // The object has been saved.
-                
+                self.loadData1()
             } else {
                 // There was a problem, check error.description
             }
