@@ -146,7 +146,7 @@ class TimerViewController: UIViewController {
     @IBAction func logoutBtn(sender: AnyObject) {
         PFUser.logOut()
         self.dismissViewControllerAnimated(true, completion: nil)
-    }
+            }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
