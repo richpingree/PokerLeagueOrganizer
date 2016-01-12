@@ -17,6 +17,7 @@ class TimerViewController: UIViewController {
     var timer = NSTimer()
     var count:NSTimeInterval = 120
     var array = NSMutableArray()   //Change your array type to NSMutableArray
+    var arrayInt = 0
     @IBOutlet weak var anteLabel: UILabel!
     @IBOutlet weak var sBlindLabel: UILabel!
     @IBOutlet weak var bBlindLabel: UILabel!
@@ -71,16 +72,10 @@ class TimerViewController: UIViewController {
                 self.array = NSMutableArray(array: tempArray)
                 print(self.array.count)
                 
-                let tempObject = self.array.objectAtIndex(0) as! PFObject
+                let tempObject = self.array.objectAtIndex(self.arrayInt) as! PFObject
                 let sBlindString = (tempObject.objectForKey("Small") as? String)!
                 
-//                dispatch_async(dispatch_get_main_queue()) {
-//                    self.sBlindLabel.text = sBlindString
-//                    //self.bBlindLabel.text = tempObject.objectForKey("Big") as? String
-//                    print(self.array)
-//                    print(sBlindString)
-//
-//                }
+
                 self.sBlindLabel.text = sBlindString
                 self.bBlindLabel.text = tempObject.objectForKey("Big") as? String
                 print(self.array)
