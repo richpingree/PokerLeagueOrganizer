@@ -16,6 +16,11 @@ class TimerViewController: UIViewController {
     
     var timer = NSTimer()
     var count:NSTimeInterval = 120
+    var array = NSMutableArray()   //Change your array type to NSMutableArray
+    @IBOutlet weak var anteLabel: UILabel!
+    @IBOutlet weak var sBlindLabel: UILabel!
+    @IBOutlet weak var bBlindLabel: UILabel!
+    
     
     @IBOutlet weak var prevBtn: UIButton!
     @IBOutlet weak var play: UIButton!
@@ -36,6 +41,55 @@ class TimerViewController: UIViewController {
             userLabel.text = "Welcome" + " " + pUserName
         }
         bTimer.text = timeString(count)
+        //sBlindLabel.text = "5"
+        loadData1()
+        
+        
+    }
+    
+    
+    func loadData1() {
+        
+        self.array.removeAllObjects()
+        
+        let query = PFQuery(className: "BlindLevel")
+        
+        query.orderByAscending("Time")
+        
+        query.findObjectsInBackgroundWithBlock { (objects:[PFObject]?, error: NSError?) -> Void in
+            
+            if error == nil {
+                
+                //loop your objects array
+                for object in objects!{
+                    
+                    let blindLevel = object as PFObject
+                    //add your element into array
+                    self.array.addObject(blindLevel)
+                }
+                let tempArray :NSArray = self.array.objectEnumerator().allObjects
+                self.array = NSMutableArray(array: tempArray)
+                print(self.array.count)
+                
+                let tempObject = self.array.objectAtIndex(0) as! PFObject
+                let sBlindString = (tempObject.objectForKey("Small") as? String)!
+                
+//                dispatch_async(dispatch_get_main_queue()) {
+//                    self.sBlindLabel.text = sBlindString
+//                    //self.bBlindLabel.text = tempObject.objectForKey("Big") as? String
+//                    print(self.array)
+//                    print(sBlindString)
+//
+//                }
+                self.sBlindLabel.text = sBlindString
+                self.bBlindLabel.text = tempObject.objectForKey("Big") as? String
+                print(self.array)
+                print(sBlindString)
+            } else {
+                
+                //println( error?.userInfo )
+            }
+        }
         
     }
     
