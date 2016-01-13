@@ -33,6 +33,8 @@ class RegisterViewController: UIViewController {
         if emailTxt.text != confirmEmailTxt.text{
             let alert = UIAlertView(title: "Email address mismatch", message: "Please check email address and try again", delegate: nil, cancelButtonTitle: "OK")
             alert.show()
+        }else{
+            checkPasswordMatch()
         }
     }
     
@@ -41,6 +43,8 @@ class RegisterViewController: UIViewController {
         if passTxt.text != confirmPassTxt.text{
             let alert = UIAlertView(title: "Password mismatch", message: "Please check and enter again", delegate: nil, cancelButtonTitle: "OK")
             alert.show()
+        }else{
+            signUp()
         }
     }
     //check that all fields are complete
@@ -50,7 +54,7 @@ class RegisterViewController: UIViewController {
             alert.show()
         } else {
             checkEmailMatch()
-            checkPasswordMatch()
+            //checkPasswordMatch()
         }
     }
     
@@ -78,7 +82,7 @@ class RegisterViewController: UIViewController {
 
     @IBAction func loginBtn(sender: AnyObject) {
         checkFieldComplete()
-        signUp()
+        //signUp()
         
         
     }
