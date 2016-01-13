@@ -90,7 +90,7 @@ class TimerViewController: UIViewController {
     
     //timer countdown
     func update() {
-        if(count > 0){
+        if(count >= 0){
             bTimer.text = timeString(count--)
             
         }else{
@@ -109,7 +109,8 @@ class TimerViewController: UIViewController {
     
     //previous button action
     @IBAction func prevBtn(sender: AnyObject) {
-        
+        self.arrayInt--
+        loadData1()
     }
     
     //play button action
@@ -124,7 +125,8 @@ class TimerViewController: UIViewController {
     
     //next button action
     @IBAction func nextBtn(sender: AnyObject) {
-        
+        self.arrayInt++
+        loadData1()
     }
     
     //blinds button action
@@ -139,7 +141,8 @@ class TimerViewController: UIViewController {
     
     //reset button action
     @IBAction func resetBtn(sender: AnyObject) {
-        
+        arrayInt = 0
+        loadData1()
     }
     
     //logout button action
