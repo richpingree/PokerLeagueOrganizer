@@ -16,6 +16,7 @@ class TournamentViewController: UIViewController, UITableViewDelegate, UITableVi
     @IBOutlet weak var tourneyTable: UITableView!
     
     var tourneyArray : NSMutableArray = []
+    var refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -24,6 +25,12 @@ class TournamentViewController: UIViewController, UITableViewDelegate, UITableVi
         tourneyTable.delegate = self
         tourneyTable.dataSource = self
         self.tourneyTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "tourneyCell")
+        
+        // set up the refresh control
+        self.refreshControl.attributedTitle = NSAttributedString(string: "Pull to refresh")
+        self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
+        self.tourneyTable?.addSubview(refreshControl)
+        
         loadTourneyData()
     }
     
@@ -44,12 +51,21 @@ class TournamentViewController: UIViewController, UITableViewDelegate, UITableVi
                     //add into array
                     self.tourneyArray.addObject(tournament)
                 }
+                // tell refresh control it can stop showing up now
+                if self.refreshControl.refreshing
+                {
+                    self.refreshControl.endRefreshing()
+                }
                 self.tourneyTable.reloadData()
                 
             } else{
                 
             }
         }
+    }
+    
+    func refresh(sender:AnyObject) {
+        self.loadTourneyData()
     }
 
     func tableView(tourneyTable: UITableView, numberOfRowsInSection section: Int) -> Int {
