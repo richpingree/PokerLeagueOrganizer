@@ -856,6 +856,15 @@
                     <simulatedStatusBarMetrics key="simulatedStatusBarMetrics"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <nil key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="date" destination="xVd-CF-P3e" id="1K6-kO-hsa"/>
+                        <outlet property="firstEarnings" destination="p2k-nc-85I" id="uZ5-Yw-bAd"/>
+                        <outlet property="firstName" destination="EsE-Ht-3yX" id="udA-wi-PQf"/>
+                        <outlet property="firstPoints" destination="4Km-EX-MEy" id="JgJ-8U-Cpe"/>
+                        <outlet property="secondEarnings" destination="fCf-Es-AmW" id="UeJ-hP-I9r"/>
+                        <outlet property="secondName" destination="Jeb-Mi-9hR" id="3IT-BW-OBF"/>
+                        <outlet property="secondPoints" destination="F7v-E8-R4s" id="b0I-AB-A9J"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5QQ-0g-TAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

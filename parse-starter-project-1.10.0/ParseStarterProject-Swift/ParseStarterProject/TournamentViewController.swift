@@ -82,7 +82,7 @@ class TournamentViewController: UIViewController, UITableViewDelegate, UITableVi
         return cell    }
     
     func tableView(tourneyTable: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+    
     }
 
     override func didReceiveMemoryWarning() {

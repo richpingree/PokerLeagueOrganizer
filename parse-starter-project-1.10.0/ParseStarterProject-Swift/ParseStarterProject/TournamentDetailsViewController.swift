@@ -10,6 +10,13 @@ import UIKit
 
 class TournamentDetailsViewController: UIViewController {
 
+    @IBOutlet weak var date: UILabel!
+    @IBOutlet weak var firstName: UILabel!
+    @IBOutlet weak var firstPoints: UILabel!
+    @IBOutlet weak var firstEarnings: UILabel!
+    @IBOutlet weak var secondName: UILabel!
+    @IBOutlet weak var secondPoints: UILabel!
+    @IBOutlet weak var secondEarnings: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
 
