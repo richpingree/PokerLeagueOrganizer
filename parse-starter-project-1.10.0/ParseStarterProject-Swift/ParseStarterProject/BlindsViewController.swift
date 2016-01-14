@@ -49,7 +49,7 @@ class BlindsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let query = PFQuery(className: "BlindLevel")
         
-        query.orderByAscending("Time")
+        query.orderByAscending("createdAt")
         
         query.findObjectsInBackgroundWithBlock { (objects:[PFObject]?, error: NSError?) -> Void in
             
@@ -103,7 +103,23 @@ class BlindsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     
     @IBAction func breakSwitch(sender: AnyObject) {
-        
+        if (breakSwitch.on){
+            self.anteInput.enabled = false
+            self.anteInput.text = "0"
+            self.smallInput.enabled = false
+            self.smallInput.text = "0"
+            self.bigInput.enabled = false
+            self.bigInput.text = "0"
+            
+        }else{
+            self.anteInput.enabled = true
+            self.anteInput.text = "0"
+            self.smallInput.enabled = true
+            self.smallInput.text = "5"
+            self.bigInput.enabled = true
+            self.bigInput.text = "10"
+
+        }
     }
     
     @IBAction func addBtn(sender: AnyObject) {
@@ -121,6 +137,9 @@ class BlindsViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 // There was a problem, check error.description
             }
         }
+    }
+    @IBAction func doneBtn(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
     /*

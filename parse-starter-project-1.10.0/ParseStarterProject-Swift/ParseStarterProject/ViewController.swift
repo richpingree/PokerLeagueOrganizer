@@ -24,6 +24,7 @@ class ViewController: UIViewController {
         
         LoginUserTxt.text = nil
         LoginPassTxt.text = nil
+        
         //check if connected to network
         if Reachability.isConnectedNetwork(){
             NSLog("Is connected to the Internet!")
@@ -44,7 +45,8 @@ class ViewController: UIViewController {
             (user: PFUser?, error: NSError?) -> Void in
             if user != nil{
                 NSLog("Login Successful")
-                
+                self.LoginUserTxt.text = nil
+                self.LoginPassTxt.text = nil
                 self.performSegueWithIdentifier("login", sender: self)
             }else{
                 _ = UIAlertView(title: "Ooops", message: "Username is already taken", delegate: nil, cancelButtonTitle: "OK")

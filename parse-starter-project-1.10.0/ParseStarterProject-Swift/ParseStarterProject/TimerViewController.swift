@@ -6,6 +6,7 @@
 //  Copyright © 2015 Parse. All rights reserved.
 //
 
+
 import UIKit
 import Parse
 
@@ -15,7 +16,8 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var bTimer: UILabel!
     
     var timer = NSTimer()
-    var count:NSTimeInterval = 120
+    var count = 120.0
+//    var count:NSTimeInterval = 120
     var array = NSMutableArray()   //Change your array type to NSMutableArray
     var arrayInt = 0
     @IBOutlet weak var anteLabel: UILabel!
@@ -41,7 +43,7 @@ class TimerViewController: UIViewController {
         if let pUserName = PFUser.currentUser()?["username"] as? String {
             userLabel.text = "Welcome" + " " + pUserName
         }
-        bTimer.text = timeString(count)
+        //bTimer.text = timeString(count)
         //sBlindLabel.text = "5"
         loadData1()
         
@@ -55,7 +57,7 @@ class TimerViewController: UIViewController {
         
         let query = PFQuery(className: "BlindLevel")
         
-        query.orderByAscending("Time")
+        query.orderByAscending("createdAt")
         
         query.findObjectsInBackgroundWithBlock { (objects:[PFObject]?, error: NSError?) -> Void in
             
@@ -70,16 +72,18 @@ class TimerViewController: UIViewController {
                 }
                 let tempArray :NSArray = self.array.objectEnumerator().allObjects
                 self.array = NSMutableArray(array: tempArray)
-                print(self.array.count)
+                //print(self.array.count)
                 
                 let tempObject = self.array.objectAtIndex(self.arrayInt) as! PFObject
-                let sBlindString = (tempObject.objectForKey("Small") as? String)!
                 
-
-                self.sBlindLabel.text = sBlindString
+                let minutes = (tempObject.objectForKey("Time")as! NSString).doubleValue
+                self.count = 60 * minutes
+                
+                self.bTimer.text = self.timeString(self.count)
+                self.anteLabel.text = tempObject.objectForKey("Ante") as? String
+                self.sBlindLabel.text = tempObject.objectForKey("Small") as? String
                 self.bBlindLabel.text = tempObject.objectForKey("Big") as? String
-                print(self.array)
-                print(sBlindString)
+                
             } else {
                 
                 //println( error?.userInfo )
@@ -142,6 +146,7 @@ class TimerViewController: UIViewController {
     //reset button action
     @IBAction func resetBtn(sender: AnyObject) {
         arrayInt = 0
+        timer.invalidate()
         loadData1()
     }
     
