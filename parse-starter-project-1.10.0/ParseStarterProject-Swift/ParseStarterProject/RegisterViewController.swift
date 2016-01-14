@@ -17,6 +17,7 @@ class RegisterViewController: UIViewController {
     @IBOutlet weak var passTxt: UITextField!
     @IBOutlet weak var confirmPassTxt: UITextField!
     @IBOutlet weak var loginBtn: UIButton!
+    @IBOutlet weak var cancelBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -82,9 +83,9 @@ class RegisterViewController: UIViewController {
 
     @IBAction func loginBtn(sender: AnyObject) {
         checkFieldComplete()
-        //signUp()
-        
-        
+    }
+    @IBAction func cancelBtn(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     /*
     // MARK: - Navigation

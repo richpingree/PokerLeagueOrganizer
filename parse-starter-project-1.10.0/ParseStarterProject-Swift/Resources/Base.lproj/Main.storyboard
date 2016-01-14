@@ -197,12 +197,12 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYk-Bj-CE2">
-                                <rect key="frame" x="270" y="371" width="60" height="60"/>
+                                <rect key="frame" x="363" y="371" width="60" height="60"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="60" id="VJf-qE-VL3"/>
                                     <constraint firstAttribute="height" constant="60" id="klE-pt-YfE"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="12"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="11"/>
                                 <state key="normal" title="LOGIN" backgroundImage="Buttonimage.png">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -220,6 +220,20 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ny8-g5-JCV">
+                                <rect key="frame" x="177" y="371" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="5kt-Lf-jKw"/>
+                                    <constraint firstAttribute="height" constant="60" id="h8X-0w-GQ5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="11"/>
+                                <state key="normal" title="Cancel" backgroundImage="redbuttonimage.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelBtn:" destination="6aE-Mw-SQA" eventType="touchUpInside" id="QUc-PH-N9V"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.3803921569" blue="0.015686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -231,21 +245,27 @@
                             <constraint firstItem="glw-Mz-Feq" firstAttribute="top" secondItem="Y7k-3x-4rd" secondAttribute="bottom" constant="68" id="RKy-ZB-R5d"/>
                             <constraint firstItem="glw-Mz-Feq" firstAttribute="centerX" secondItem="2rv-sB-48d" secondAttribute="centerX" id="Tr0-qC-sO8"/>
                             <constraint firstItem="2rv-sB-48d" firstAttribute="top" secondItem="glw-Mz-Feq" secondAttribute="bottom" constant="24" id="Upq-GN-aa6"/>
-                            <constraint firstItem="FYk-Bj-CE2" firstAttribute="centerX" secondItem="Twz-oP-Xc4" secondAttribute="centerX" id="WfL-jq-iyL"/>
+                            <constraint firstItem="FYk-Bj-CE2" firstAttribute="centerX" secondItem="Twz-oP-Xc4" secondAttribute="centerX" constant="93" id="WfL-jq-iyL"/>
                             <constraint firstItem="FIL-Sc-GGb" firstAttribute="leading" secondItem="Twz-oP-Xc4" secondAttribute="leading" id="XDs-OF-wCm"/>
+                            <constraint firstItem="Ny8-g5-JCV" firstAttribute="centerX" secondItem="BLb-jX-3Bb" secondAttribute="centerX" constant="-93" id="a5o-FJ-17I"/>
                             <constraint firstItem="rUF-6Y-ltz" firstAttribute="top" secondItem="Po1-fE-R0X" secondAttribute="bottom" constant="8" symbolic="YES" id="bFx-Gl-PQ1"/>
                             <constraint firstItem="rUF-6Y-ltz" firstAttribute="trailing" secondItem="BVm-vE-a4g" secondAttribute="trailing" id="d2l-1o-ivf"/>
+                            <constraint firstItem="Ny8-g5-JCV" firstAttribute="baseline" secondItem="FYk-Bj-CE2" secondAttribute="firstBaseline" id="f1e-WW-yDi"/>
                             <constraint firstItem="FIL-Sc-GGb" firstAttribute="trailing" secondItem="BVm-vE-a4g" secondAttribute="trailing" id="fJT-N9-pWR"/>
                             <constraint firstItem="Po1-fE-R0X" firstAttribute="top" secondItem="2rv-sB-48d" secondAttribute="bottom" constant="8" symbolic="YES" id="gUO-qg-lpB"/>
+                            <constraint firstItem="Ny8-g5-JCV" firstAttribute="bottom" secondItem="FYk-Bj-CE2" secondAttribute="bottom" id="ipW-pk-T1g"/>
                             <constraint firstItem="BVm-vE-a4g" firstAttribute="top" secondItem="rUF-6Y-ltz" secondAttribute="bottom" constant="8" symbolic="YES" id="ix4-Zd-tjH"/>
                             <constraint firstItem="FIL-Sc-GGb" firstAttribute="trailing" secondItem="Twz-oP-Xc4" secondAttribute="trailing" id="jtk-AL-CyL"/>
+                            <constraint firstItem="Ny8-g5-JCV" firstAttribute="firstBaseline" secondItem="FYk-Bj-CE2" secondAttribute="baseline" id="lDf-3f-Gum"/>
                             <constraint firstItem="Po1-fE-R0X" firstAttribute="leading" secondItem="rUF-6Y-ltz" secondAttribute="leading" id="lm0-8m-Ref"/>
                             <constraint firstItem="FIL-Sc-GGb" firstAttribute="centerX" secondItem="BLb-jX-3Bb" secondAttribute="centerX" id="pfs-ZU-uSM"/>
                             <constraint firstItem="BVm-vE-a4g" firstAttribute="leading" secondItem="rUF-6Y-ltz" secondAttribute="leading" id="qw1-gs-eCY"/>
                             <constraint firstItem="FIL-Sc-GGb" firstAttribute="top" secondItem="BVm-vE-a4g" secondAttribute="bottom" constant="8" symbolic="YES" id="ta5-RK-Wcn"/>
+                            <constraint firstItem="Ny8-g5-JCV" firstAttribute="top" secondItem="FYk-Bj-CE2" secondAttribute="top" id="y2s-0H-M2l"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancelBtn" destination="Ny8-g5-JCV" id="1Om-ib-EPO"/>
                         <outlet property="confirmEmailTxt" destination="BVm-vE-a4g" id="l19-Ev-oqU"/>
                         <outlet property="confirmPassTxt" destination="Twz-oP-Xc4" id="RH5-f3-orX"/>
                         <outlet property="emailTxt" destination="rUF-6Y-ltz" id="NBZ-Wm-FzL"/>
@@ -1785,11 +1805,26 @@
                                     <segue destination="ddU-Hn-62q" kind="presentation" id="j8m-S4-Hfq"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Rich" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozM-0g-YgI">
+                                <rect key="frame" x="14" y="64" width="103" height="18"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hs4-8N-E8Q">
                                 <rect key="frame" x="150" y="422" width="130" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="OX6-61-Fac"/>
                                     <constraint firstAttribute="width" constant="130" id="RBj-2Z-W4G"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="23"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oS0-Ih-Eet">
+                                <rect key="frame" x="320" y="422" width="130" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="130" id="Ten-Jv-tfT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="23"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -1808,21 +1843,6 @@
                                     <action selector="pause:" destination="cEh-1A-wAB" eventType="touchUpInside" id="WpX-9o-0jz"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oS0-Ih-Eet">
-                                <rect key="frame" x="320" y="422" width="130" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="130" id="Ten-Jv-tfT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="23"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome Rich" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ozM-0g-YgI">
-                                <rect key="frame" x="14" y="64" width="103" height="18"/>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="15"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.38039215686274508" blue="0.015686274509803921" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -2202,6 +2222,6 @@
         <image name="redbuttonimage.png" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WS7-1M-QGb"/>
+        <segue reference="7md-pU-MSg"/>
     </inferredMetricsTieBreakers>
 </document>
