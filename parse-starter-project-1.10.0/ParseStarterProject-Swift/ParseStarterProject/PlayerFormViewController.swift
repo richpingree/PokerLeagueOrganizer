@@ -17,6 +17,7 @@ class PlayerFormViewController: UIViewController {
     @IBOutlet weak var totalPointsInput: UITextField!
     @IBOutlet weak var totalEarningsInput: UITextField!
     @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var cancelBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -40,6 +41,11 @@ class PlayerFormViewController: UIViewController {
         }
         
     }
+    
+    @IBAction func cancelBtn(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

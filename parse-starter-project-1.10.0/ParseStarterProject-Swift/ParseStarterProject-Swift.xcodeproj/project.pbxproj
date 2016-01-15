@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		700820911C192C2700D6653D /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 700820901C192C2700D6653D /* Background.swift */; };
+		70180E091C48AB550043FEF6 /* EditPlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70180E081C48AB550043FEF6 /* EditPlayerViewController.swift */; };
 		709D6AF21C1CA28900983DF3 /* pokerLeagueBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 709D6AF11C1CA28900983DF3 /* pokerLeagueBackground.png */; };
 		709D6AF41C1CAC0700983DF3 /* Buttonimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 709D6AF31C1CAC0700983DF3 /* Buttonimage.png */; };
 		709D6AF61C1CAE6B00983DF3 /* redbuttonimage.png in Resources */ = {isa = PBXBuildFile; fileRef = 709D6AF51C1CAE6B00983DF3 /* redbuttonimage.png */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		700820901C192C2700D6653D /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Background.swift; path = ../Background.swift; sourceTree = "<group>"; };
+		70180E081C48AB550043FEF6 /* EditPlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditPlayerViewController.swift; sourceTree = "<group>"; };
 		709D6AF11C1CA28900983DF3 /* pokerLeagueBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pokerLeagueBackground.png; sourceTree = "<group>"; };
 		709D6AF31C1CAC0700983DF3 /* Buttonimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Buttonimage.png; sourceTree = "<group>"; };
 		709D6AF51C1CAE6B00983DF3 /* redbuttonimage.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redbuttonimage.png; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				70D020CF1C3A1AB800352726 /* RegisterViewController.swift */,
 				70D020D11C3CB99A00352726 /* Reachability.swift */,
 				70D020D51C41F3A700352726 /* RulesViewController.swift */,
+				70180E081C48AB550043FEF6 /* EditPlayerViewController.swift */,
 			);
 			path = ParseStarterProject;
 			sourceTree = "<group>";
@@ -257,6 +260,7 @@
 				70D020C61C382E8600352726 /* TournamentFormViewController.swift in Sources */,
 				70D020D61C41F3A700352726 /* RulesViewController.swift in Sources */,
 				70D020CA1C382F7A00352726 /* PlayerViewController.swift in Sources */,
+				70180E091C48AB550043FEF6 /* EditPlayerViewController.swift in Sources */,
 				70D020C41C382E4400352726 /* TournamentViewController.swift in Sources */,
 				70D020CC1C382FC000352726 /* PlayerFormViewController.swift in Sources */,
 				70CB28001C32C86900EA610E /* BlindsViewController.swift in Sources */,
