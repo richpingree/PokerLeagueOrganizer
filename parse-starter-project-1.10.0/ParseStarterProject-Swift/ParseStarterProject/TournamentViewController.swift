@@ -85,8 +85,6 @@ class TournamentViewController: UIViewController, UITableViewDelegate, UITableVi
     
     func tableView(tourneyTable: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
-        //var cell:UITableViewCell = self.tourneyTable.dequeueReusableCellWithIdentifier("tourneyCell")! as UITableViewCell
-        
         if editingStyle == UITableViewCellEditingStyle.Delete{
             
             if self.tourneyArray.count >= 1{

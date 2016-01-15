@@ -82,8 +82,22 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let tempObject = playerArray.objectAtIndex(indexPath.row) as! PFObject
         cell.textLabel?.text = tempObject.objectForKey("First") as? String
         
-        return cell    }
+        return cell
+    }
     
+    func tableView(playerTable: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if editingStyle == UITableViewCellEditingStyle.Delete{
+            
+            if self.playerArray.count >= 1{
+                let selectedObject = playerArray.objectAtIndex(indexPath.row)  as! PFObject
+                selectedObject.deleteInBackground()
+                self.playerArray.removeObjectAtIndex(indexPath.row)
+                self.playerTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                self.playerTable.reloadData()
+            }
+        }
+    }
     func tableView(playerTable: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
     }

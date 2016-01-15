@@ -73,11 +73,11 @@ class BlindsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
 
-    func tableView(blindTable: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(blindsTable: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.blindArray.count
     }
     
-    func tableView(blindTable: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(blindsTable: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = self.blindsTable.dequeueReusableCellWithIdentifier("blindCell")! as UITableViewCell
         
         let tempObject = blindArray.objectAtIndex(indexPath.row) as! PFObject
@@ -90,6 +90,20 @@ class BlindsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         cell.detailTextLabel?.text = smallString + " " + bigString
         
         return cell
+    }
+    
+    func tableView(blindsTable: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        
+        if editingStyle == UITableViewCellEditingStyle.Delete{
+            
+            if self.blindArray.count >= 1{
+                let selectedObject = blindArray.objectAtIndex(indexPath.row)  as! PFObject
+                selectedObject.deleteInBackground()
+                self.blindArray.removeObjectAtIndex(indexPath.row)
+                self.blindsTable.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                self.blindsTable.reloadData()
+            }
+        }
     }
     
     func tableView(blindTable: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
