@@ -687,6 +687,9 @@
                                 <state key="normal" title="Done" backgroundImage="redbuttonimage.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="doneBtn:" destination="KLh-Bg-kaI" eventType="touchUpInside" id="dLa-eJ-1Vd"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="December 12, 2015" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xVd-CF-P3e">
                                 <rect key="frame" x="225" y="103" width="150" height="21"/>
@@ -878,12 +881,37 @@
                     <nil key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="date" destination="xVd-CF-P3e" id="1K6-kO-hsa"/>
+                        <outlet property="doneBtn" destination="78a-kG-mOG" id="W4g-RD-feS"/>
+                        <outlet property="eighthEarnings" destination="6sk-iY-O3b" id="C72-F8-Hov"/>
+                        <outlet property="eighthName" destination="lYq-l3-zJh" id="Fpv-xW-t7x"/>
+                        <outlet property="eighthPoints" destination="6sk-iY-O3b" id="nlo-Bg-Pby"/>
+                        <outlet property="fifthEarnings" destination="Pbs-pY-la1" id="1v6-nO-JMm"/>
+                        <outlet property="fifthName" destination="X80-2u-F8e" id="0HT-XY-dqn"/>
+                        <outlet property="fifthPoints" destination="fhf-Jv-xId" id="va7-Nz-sh7"/>
                         <outlet property="firstEarnings" destination="p2k-nc-85I" id="uZ5-Yw-bAd"/>
                         <outlet property="firstName" destination="EsE-Ht-3yX" id="udA-wi-PQf"/>
                         <outlet property="firstPoints" destination="4Km-EX-MEy" id="JgJ-8U-Cpe"/>
+                        <outlet property="fourthEarnings" destination="8Ty-Pa-EJh" id="2X4-7Q-xzw"/>
+                        <outlet property="fourthName" destination="Vo7-Nk-xKM" id="AuR-OI-MZ3"/>
+                        <outlet property="fourthPoints" destination="7VM-5r-ctP" id="Biv-Qa-Qtd"/>
+                        <outlet property="ninthEarnings" destination="ytc-pT-mLc" id="wmN-yo-nIC"/>
+                        <outlet property="ninthName" destination="iaL-he-TeM" id="QNa-pi-d0U"/>
+                        <outlet property="ninthPoints" destination="7PR-0x-8E1" id="BCk-Fx-QlE"/>
                         <outlet property="secondEarnings" destination="fCf-Es-AmW" id="UeJ-hP-I9r"/>
                         <outlet property="secondName" destination="Jeb-Mi-9hR" id="3IT-BW-OBF"/>
                         <outlet property="secondPoints" destination="F7v-E8-R4s" id="b0I-AB-A9J"/>
+                        <outlet property="seventhEarnings" destination="Hbd-vV-OHt" id="OQs-wV-eRz"/>
+                        <outlet property="seventhName" destination="dj5-Cq-5rj" id="Yxr-qn-YYL"/>
+                        <outlet property="seventhPoints" destination="NlL-AI-SQS" id="KOV-sw-94Z"/>
+                        <outlet property="sixthEarnings" destination="Tev-J3-zb4" id="AJY-23-X3w"/>
+                        <outlet property="sixthName" destination="cF7-s8-3Ib" id="w1P-AJ-Xxt"/>
+                        <outlet property="sixthPoints" destination="n8y-Dh-meo" id="971-ZU-d1A"/>
+                        <outlet property="tenthEarnings" destination="ZrT-d6-dYM" id="PPS-4c-IOu"/>
+                        <outlet property="tenthName" destination="ZbW-7K-FmR" id="8Nf-mE-A6P"/>
+                        <outlet property="tenthPoints" destination="Jrn-bh-lFu" id="TnJ-G7-5j0"/>
+                        <outlet property="thirdEarnings" destination="uxy-D8-W5X" id="BSc-HF-JJM"/>
+                        <outlet property="thirdName" destination="1az-lh-Eve" id="CAy-dQ-hAc"/>
+                        <outlet property="thirdPoints" destination="yfU-sU-7X7" id="h7d-lL-2nU"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5QQ-0g-TAs" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -1085,7 +1113,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="KLh-Bg-kaI" kind="presentation" identifier="TournamentDetailView" id="RKb-Ye-Xdj"/>
+                                            <segue destination="KLh-Bg-kaI" kind="showDetail" identifier="TournamentDetailView" action="showViewController:sender:" id="RKb-Ye-Xdj"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
