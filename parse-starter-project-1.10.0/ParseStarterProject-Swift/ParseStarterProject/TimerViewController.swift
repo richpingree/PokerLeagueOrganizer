@@ -122,11 +122,15 @@ class TimerViewController: UIViewController {
     
     //play button action
     @IBAction func play(sender: AnyObject) {
+        pause.enabled = true
+        play.enabled = false
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
     }
     
     //pause button action
     @IBAction func pause(sender: AnyObject) {
+        play.enabled = true
+        pause.enabled = false
         timer.invalidate()
     }
     
