@@ -94,11 +94,14 @@ class TimerViewController: UIViewController {
     
     //timer countdown
     func update() {
-        if(count >= 0){
+        if(count > 0){
+            
             bTimer.text = timeString(count--)
             
         }else{
-            timer.invalidate();
+            //timer.invalidate();
+            self.arrayInt++
+            loadData1()
         }
         
     
