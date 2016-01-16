@@ -933,7 +933,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Player Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXI-BB-Dbt">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player Info" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XXI-BB-Dbt">
                                 <rect key="frame" x="238" y="58" width="120" height="29"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="29" id="4Ck-6O-Bqt"/>
@@ -1014,6 +1014,20 @@
                                     <action selector="saveBtn:" destination="eMj-yU-kJC" eventType="touchUpInside" id="C8q-dv-JHH"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEJ-CN-PKJ">
+                                <rect key="frame" x="192" y="319" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="sfn-IG-Wwl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="11"/>
+                                <state key="normal" title="Cancel" backgroundImage="redbuttonimage.png">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="cancelBtn:" destination="eMj-yU-kJC" eventType="touchUpInside" id="CSb-f1-77Q"/>
+                                    <action selector="cancelBtn:" destination="zDL-a2-d2Q" eventType="touchUpInside" id="hmb-a7-UQ0"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLy-a1-HpS">
                                 <rect key="frame" x="192" y="123" width="74" height="30"/>
                                 <constraints>
@@ -1031,27 +1045,12 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEJ-CN-PKJ">
-                                <rect key="frame" x="192" y="319" width="60" height="60"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="60" id="sfn-IG-Wwl"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="11"/>
-                                <state key="normal" title="Cancel" backgroundImage="redbuttonimage.png">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="cancelBtn:" destination="eMj-yU-kJC" eventType="touchUpInside" id="CSb-f1-77Q"/>
-                                    <action selector="cancelBtn:" destination="zDL-a2-d2Q" eventType="touchUpInside" id="hmb-a7-UQ0"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.38039215686274508" blue="0.015686274509803921" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="h8g-Wn-EXr" firstAttribute="top" secondItem="5oN-fc-8su" secondAttribute="bottom" constant="8" id="2f2-dN-KVj"/>
                             <constraint firstItem="GEJ-CN-PKJ" firstAttribute="top" secondItem="1zi-tB-hIt" secondAttribute="bottom" constant="8" id="2oL-e3-dTX"/>
                             <constraint firstItem="pd5-7t-0R2" firstAttribute="leading" secondItem="5oN-fc-8su" secondAttribute="leading" id="3Su-D7-DEu"/>
-                            <constraint firstItem="Fj4-LE-GkG" firstAttribute="leading" secondItem="zSN-cp-BRd" secondAttribute="leading" constant="191" id="4tH-J8-WT2"/>
                             <constraint firstItem="pd5-7t-0R2" firstAttribute="top" secondItem="ocK-ql-Qp3" secondAttribute="top" id="5Rp-85-1GX"/>
                             <constraint firstItem="5oN-fc-8su" firstAttribute="bottom" secondItem="1zi-tB-hIt" secondAttribute="bottom" id="7Ep-Pd-Bkw"/>
                             <constraint firstItem="1zi-tB-hIt" firstAttribute="leading" secondItem="ocK-ql-Qp3" secondAttribute="leading" id="BFh-aP-7eS"/>
@@ -1062,6 +1061,7 @@
                             <constraint firstItem="cyf-Gd-lGQ" firstAttribute="leading" secondItem="idk-4J-uC1" secondAttribute="trailing" constant="17" id="LjW-Y5-M7k"/>
                             <constraint firstItem="lLy-a1-HpS" firstAttribute="top" secondItem="XXI-BB-Dbt" secondAttribute="bottom" constant="36" id="OWh-Me-mhu"/>
                             <constraint firstItem="XXI-BB-Dbt" firstAttribute="top" secondItem="xgL-T3-JlG" secondAttribute="bottom" constant="38" id="Pnh-Cs-NsT"/>
+                            <constraint firstItem="lLy-a1-HpS" firstAttribute="centerX" secondItem="zSN-cp-BRd" secondAttribute="centerX" constant="-71" id="QFh-RV-Pvf"/>
                             <constraint firstItem="7Qf-pS-o9m" firstAttribute="trailing" secondItem="A6b-5H-5XJ" secondAttribute="trailing" id="QUu-OE-B7U"/>
                             <constraint firstItem="5oN-fc-8su" firstAttribute="trailing" secondItem="h8g-Wn-EXr" secondAttribute="trailing" id="SFI-wW-z2O"/>
                             <constraint firstItem="h8g-Wn-EXr" firstAttribute="baseline" secondItem="GEJ-CN-PKJ" secondAttribute="firstBaseline" id="TZ6-sa-iW7"/>
@@ -1073,6 +1073,7 @@
                             <constraint firstItem="5oN-fc-8su" firstAttribute="trailing" secondItem="pd5-7t-0R2" secondAttribute="trailing" id="i8Q-bC-u74"/>
                             <constraint firstItem="A6b-5H-5XJ" firstAttribute="trailing" secondItem="cyf-Gd-lGQ" secondAttribute="trailing" id="mnZ-U9-G6J"/>
                             <constraint firstItem="GEJ-CN-PKJ" firstAttribute="baseline" secondItem="h8g-Wn-EXr" secondAttribute="firstBaseline" id="my4-q4-ect"/>
+                            <constraint firstItem="XXI-BB-Dbt" firstAttribute="centerX" secondItem="zSN-cp-BRd" secondAttribute="centerX" constant="-2" id="nWv-vi-DlD"/>
                             <constraint firstItem="7Qf-pS-o9m" firstAttribute="top" secondItem="lLy-a1-HpS" secondAttribute="top" id="pjI-lQ-Yeh"/>
                             <constraint firstItem="cyf-Gd-lGQ" firstAttribute="leading" secondItem="pd5-7t-0R2" secondAttribute="leading" id="qpq-ek-vuX"/>
                             <constraint firstItem="ocK-ql-Qp3" firstAttribute="leading" secondItem="idk-4J-uC1" secondAttribute="leading" id="uT8-y8-fEK"/>
@@ -1093,7 +1094,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OtK-4R-Jkw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1384" y="1770"/>
+            <point key="canvasLocation" x="1416" y="1772"/>
         </scene>
         <!--Player Form View Controller-->
         <scene sceneID="kMx-50-iqK">
@@ -1187,15 +1188,6 @@
                                     <action selector="saveBtn:" destination="zDL-a2-d2Q" eventType="touchUpInside" id="sa9-Z0-mfU"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNH-CW-rY0">
-                                <rect key="frame" x="194" y="127" width="74" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="bbO-bd-99f"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="QGY-H0-E2a">
                                 <rect key="frame" x="311" y="127" width="100" height="30"/>
                                 <constraints>
@@ -1207,6 +1199,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U9j-7A-gKy">
                                 <rect key="frame" x="194" y="323" width="60" height="60"/>
                                 <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="kxV-z9-yAK"/>
                                     <constraint firstAttribute="width" constant="60" id="pOG-QU-Twa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="11"/>
@@ -1217,6 +1210,15 @@
                                     <action selector="cancelBtn:" destination="zDL-a2-d2Q" eventType="touchUpInside" id="OUv-2m-uih"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SNH-CW-rY0">
+                                <rect key="frame" x="194" y="127" width="74" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="bbO-bd-99f"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="15"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.0" green="0.3803921569" blue="0.015686274510000001" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
@@ -1227,7 +1229,6 @@
                             <constraint firstItem="mfk-NY-yS0" firstAttribute="leading" secondItem="yUk-WF-lh1" secondAttribute="trailing" constant="17" id="3hh-0m-Vn1"/>
                             <constraint firstItem="0Eg-A4-f1M" firstAttribute="trailing" secondItem="acT-Xj-ObR" secondAttribute="trailing" id="79f-Ei-hjy"/>
                             <constraint firstItem="SNH-CW-rY0" firstAttribute="top" secondItem="4gA-Yb-Gbc" secondAttribute="bottom" constant="36" id="BNA-Ct-TcM"/>
-                            <constraint firstItem="eDp-sU-sGH" firstAttribute="top" secondItem="U9j-7A-gKy" secondAttribute="bottom" constant="217" id="C2g-oQ-1Pp"/>
                             <constraint firstItem="QGY-H0-E2a" firstAttribute="top" secondItem="SNH-CW-rY0" secondAttribute="top" id="CHe-GX-8oQ"/>
                             <constraint firstItem="yUk-WF-lh1" firstAttribute="top" secondItem="00w-LW-Xme" secondAttribute="bottom" constant="10" id="Ctk-nb-r1b"/>
                             <constraint firstItem="mfk-NY-yS0" firstAttribute="leading" secondItem="acT-Xj-ObR" secondAttribute="leading" id="LYS-w2-Sdb"/>

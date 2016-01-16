@@ -11,6 +11,12 @@ import Parse
 
 class EditPlayerViewController: UIViewController {
     
+    var firstName: String!
+    var lastName: String!
+    var phone: String!
+    var points: String!
+    var earnings: String!
+    
     @IBOutlet weak var firstNameInput: UITextField!
     @IBOutlet weak var lastNameInput: UITextField!
     @IBOutlet weak var phoneInput: UITextField!
@@ -22,6 +28,12 @@ class EditPlayerViewController: UIViewController {
         super.viewDidLoad()
         
         // Do any additional setup after loading the view.
+        self.firstNameInput.text = self.firstName
+        self.lastNameInput.text = self.lastName
+        self.phoneInput.text = self.phone
+        self.pointInput.text = self.points
+        self.earningInput.text = self.earnings
+        
     }
 
     override func didReceiveMemoryWarning() {

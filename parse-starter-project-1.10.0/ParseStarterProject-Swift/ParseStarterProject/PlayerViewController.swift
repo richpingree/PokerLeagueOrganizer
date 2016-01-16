@@ -99,7 +99,7 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     func tableView(playerTable: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        
+        performSegueWithIdentifier("segueToEditPlayer", sender: self)
     }
 
     override func didReceiveMemoryWarning() {
@@ -115,10 +115,28 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         if segue.identifier == "segueToEditPlayer" {
+            if let destination = segue.destinationViewController as? EditPlayerViewController {
+                 // Pass the selected object to the new view controller.
+                if let detailIndex = playerTable.indexPathForSelectedRow?.row{
+                    let currentObject = playerArray.objectAtIndex(detailIndex) as! PFObject
+                    
+                    let firstName = currentObject.objectForKey("First") as? String
+                    let lastName = currentObject.objectForKey("Last") as? String
+                    let phone = currentObject.objectForKey("Phone") as? String
+                    let points = currentObject.objectForKey("Points") as? String
+                    let earnings = currentObject.objectForKey("Earnings") as? String
+                    
+                    destination.firstName = firstName
+                    destination.lastName = lastName
+                    destination.phone = phone
+                    destination.points = points
+                    destination.earnings = earnings
+                }
+            }
             
         }
 
-        // Pass the selected object to the new view controller.
+       
     }
     
 
