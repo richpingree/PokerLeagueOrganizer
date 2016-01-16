@@ -32,6 +32,10 @@ class TournamentViewController: UIViewController, UITableViewDelegate, UITableVi
         self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.tourneyTable?.addSubview(refreshControl)
         
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         loadTourneyData()
     }
     

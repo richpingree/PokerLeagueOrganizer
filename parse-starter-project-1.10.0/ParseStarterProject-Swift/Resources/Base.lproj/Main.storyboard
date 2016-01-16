@@ -310,6 +310,7 @@
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
+                                    <action selector="addBtn:" destination="YwL-6c-Onp" eventType="touchUpInside" id="3qf-iK-DQv"/>
                                     <segue destination="zDL-a2-d2Q" kind="presentation" id="quj-jo-xb8"/>
                                 </connections>
                             </button>
@@ -323,6 +324,9 @@
                                 <state key="normal" title="RND" backgroundImage="redbuttonimage.png">
                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="randomBtn:" destination="YwL-6c-Onp" eventType="touchUpInside" id="peJ-0n-0Fg"/>
+                                </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="m0a-Mn-tcM">
                                 <rect key="frame" x="140" y="165" width="320" height="387"/>
@@ -2445,6 +2449,6 @@
         <image name="redbuttonimage.png" width="200" height="200"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7md-pU-MSg"/>
+        <segue reference="WS7-1M-QGb"/>
     </inferredMetricsTieBreakers>
 </document>

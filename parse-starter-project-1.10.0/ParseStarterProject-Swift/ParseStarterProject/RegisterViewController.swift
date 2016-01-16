@@ -29,6 +29,16 @@ class RegisterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+        //check that all fields are complete
+    func checkFieldComplete() {
+        if userTxt.text!.isEmpty || emailTxt.text!.isEmpty || confirmEmailTxt.text!.isEmpty || passTxt.text!.isEmpty || confirmEmailTxt.text!.isEmpty {
+            let alert = UIAlertView(title: "All Fields are Required", message: "Please check the fields and try again", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+        } else {
+            checkEmailMatch()
+        
+        }
+    }
     //check that emails match
     func checkEmailMatch() {
         if emailTxt.text != confirmEmailTxt.text{
@@ -38,7 +48,6 @@ class RegisterViewController: UIViewController {
             checkPasswordMatch()
         }
     }
-    
     //check that passwords match
     func checkPasswordMatch(){
         if passTxt.text != confirmPassTxt.text{
@@ -48,18 +57,7 @@ class RegisterViewController: UIViewController {
             signUp()
         }
     }
-    //check that all fields are complete
-    func checkFieldComplete() {
-        if userTxt.text!.isEmpty || emailTxt.text!.isEmpty || confirmEmailTxt.text!.isEmpty || passTxt.text!.isEmpty || confirmEmailTxt.text!.isEmpty {
-            let alert = UIAlertView(title: "All Fields are Required", message: "Please check the fields and try again", delegate: nil, cancelButtonTitle: "OK")
-            alert.show()
-        } else {
-            checkEmailMatch()
-            //checkPasswordMatch()
-        }
-    }
-    
-    
+        
     //register user
     func signUp() {
         let user = PFUser()

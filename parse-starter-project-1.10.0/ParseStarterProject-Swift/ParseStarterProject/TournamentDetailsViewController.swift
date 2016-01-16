@@ -83,43 +83,43 @@ class TournamentDetailsViewController: UIViewController {
         
         self.firstName.text = self.firstNameString
         self.firstPoints.text = self.firstPointsString
-        self.firstEarnings.text = self.firstEarningsString
+        self.firstEarnings.text = "$" + self.firstEarningsString
         
         self.secondName.text = self.secondNameString
         self.secondPoints.text = self.secondPointsString
-        self.secondEarnings.text = self.secondEarningsString
+        self.secondEarnings.text = "$" + self.secondEarningsString
         
         self.thirdName.text = self.thirdNameString
         self.thirdPoints.text = self.thirdPointsString
-        self.thirdEarnings.text = self.thirdEarningsString
+        self.thirdEarnings.text = "$" + self.thirdEarningsString
         
         self.fourthName.text = self.fourthNameString
         self.fourthPoints.text = self.fourthPointsString
-        self.fourthEarnings.text = self.fourthEarningsString
+        self.fourthEarnings.text = "$" + self.fourthEarningsString
         
         self.fifthName.text = self.fifthNameString
         self.fifthPoints.text = self.fifthPointsString
-        self.fifthEarnings.text = self.fifthEarningsString
+        self.fifthEarnings.text = "$" + self.fifthEarningsString
         
         self.sixthName.text = self.sixthNameString
         self.sixthPoints.text = self.sixthPointsString
-        self.sixthEarnings.text = self.sixthEarningsString
+        self.sixthEarnings.text = "$" + self.sixthEarningsString
         
         self.seventhName.text = self.seventhNameString
         self.seventhPoints.text = self.seventhPointsString
-        self.seventhEarnings.text = self.seventhEarningsString
+        self.seventhEarnings.text = "$" + self.seventhEarningsString
         
         self.eighthName.text = self.eighthNameString
         self.eighthPoints.text = self.eighthPointsString
-        self.eighthEarnings.text = self.eighthEarningsString
+        self.eighthEarnings.text = "$" + self.eighthEarningsString
         
         self.ninthName.text = self.ninthNameString
         self.ninthPoints.text = self.ninthPointsString
-        self.ninthEarnings.text = self.ninthEarningsString
+        self.ninthEarnings.text = "$" + self.ninthEarningsString
         
         self.tenthName.text = self.tenthNameString
         self.tenthPoints.text = self.tenthPointsString
-        self.tenthEarnings.text = self.tenthEarningsString
+        self.tenthEarnings.text = "$" + self.tenthEarningsString
     }
 
     override func didReceiveMemoryWarning() {

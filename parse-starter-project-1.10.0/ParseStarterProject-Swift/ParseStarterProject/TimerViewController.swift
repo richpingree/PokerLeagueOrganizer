@@ -50,6 +50,10 @@ class TimerViewController: UIViewController {
         
     }
     
+    override func viewWillAppear(animated: Bool) {
+        loadData1()
+    }
+    
     
     func loadData1() {
         
@@ -160,8 +164,14 @@ class TimerViewController: UIViewController {
     //logout button action
     @IBAction func logoutBtn(sender: AnyObject) {
         PFUser.logOut()
-        self.dismissViewControllerAnimated(true, completion: nil)
-            }
+        //self.dismissViewControllerAnimated(true, completion: nil)
+        dispatch_async(dispatch_get_main_queue(), { () -> Void in
+            let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Login") 
+            self.presentViewController(viewController, animated: true, completion: nil)
+        })
+        
+    }
+    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

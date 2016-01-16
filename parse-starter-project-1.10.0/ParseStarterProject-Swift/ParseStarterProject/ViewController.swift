@@ -34,6 +34,16 @@ class ViewController: UIViewController {
         
         
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        if (PFUser.currentUser() == nil) {
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                
+                let viewController:UIViewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("Login") 
+                self.presentViewController(viewController, animated: true, completion: nil)
+            })
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

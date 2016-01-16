@@ -33,6 +33,9 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
         self.refreshControl.addTarget(self, action: "refresh:", forControlEvents: UIControlEvents.ValueChanged)
         self.playerTable?.addSubview(refreshControl)
 
+    }
+    
+    override func viewWillAppear(animated: Bool) {
         loadPlayerData()
     }
     
@@ -102,6 +105,12 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
         performSegueWithIdentifier("segueToEditPlayer", sender: self)
     }
 
+    @IBAction func randomBtn(sender: AnyObject) {
+    }
+    
+    @IBAction func addBtn(sender: AnyObject) {
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
