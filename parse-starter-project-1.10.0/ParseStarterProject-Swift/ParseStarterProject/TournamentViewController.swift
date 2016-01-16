@@ -119,6 +119,8 @@ class TournamentViewController: UIViewController, UITableViewDelegate, UITableVi
         // Get the new view controller using segue.destinationViewController.
         if segue.identifier == "TournamentDetailView" {
             if let destination = segue.destinationViewController as? TournamentDetailsViewController{
+                
+                // Pass the selected object to the new view controller.
                 if let detailIndex = tourneyTable.indexPathForSelectedRow?.row{
                     let currentObject = tourneyArray.objectAtIndex(detailIndex) as! PFObject
                     
@@ -209,7 +211,7 @@ class TournamentViewController: UIViewController, UITableViewDelegate, UITableVi
             }
             
         }
-        // Pass the selected object to the new view controller.
+        
     }
     
 

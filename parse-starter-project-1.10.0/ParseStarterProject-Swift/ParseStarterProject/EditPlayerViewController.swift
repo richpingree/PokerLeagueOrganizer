@@ -11,6 +11,13 @@ import Parse
 
 class EditPlayerViewController: UIViewController {
     
+    @IBOutlet weak var firstNameInput: UITextField!
+    @IBOutlet weak var lastNameInput: UITextField!
+    @IBOutlet weak var phoneInput: UITextField!
+    @IBOutlet weak var pointInput: UITextField!
+    @IBOutlet weak var earningInput: UITextField!
+    @IBOutlet weak var cancelBtn: UIButton!
+    @IBOutlet weak var saveBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,6 +27,13 @@ class EditPlayerViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    @IBAction func cancelBtn(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
+    @IBAction func saveBtn(sender: AnyObject) {
     }
     
     /*

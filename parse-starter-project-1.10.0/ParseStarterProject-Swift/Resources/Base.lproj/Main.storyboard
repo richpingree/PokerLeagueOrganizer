@@ -1011,6 +1011,7 @@
                                 </state>
                                 <connections>
                                     <action selector="saveBtn:" destination="zDL-a2-d2Q" eventType="touchUpInside" id="7Fk-rJ-vrR"/>
+                                    <action selector="saveBtn:" destination="eMj-yU-kJC" eventType="touchUpInside" id="C8q-dv-JHH"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lLy-a1-HpS">
@@ -1040,6 +1041,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
+                                    <action selector="cancelBtn:" destination="eMj-yU-kJC" eventType="touchUpInside" id="CSb-f1-77Q"/>
                                     <action selector="cancelBtn:" destination="zDL-a2-d2Q" eventType="touchUpInside" id="hmb-a7-UQ0"/>
                                 </connections>
                             </button>
@@ -1079,6 +1081,15 @@
                             <constraint firstItem="pd5-7t-0R2" firstAttribute="trailing" secondItem="cyf-Gd-lGQ" secondAttribute="trailing" id="zIY-Fi-swX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="cancelBtn" destination="GEJ-CN-PKJ" id="6tp-qt-631"/>
+                        <outlet property="earningInput" destination="5oN-fc-8su" id="2GW-hF-NdS"/>
+                        <outlet property="firstNameInput" destination="7Qf-pS-o9m" id="jMl-W0-Z3O"/>
+                        <outlet property="lastNameInput" destination="A6b-5H-5XJ" id="i62-jj-eWw"/>
+                        <outlet property="phoneInput" destination="cyf-Gd-lGQ" id="vlB-6D-ce3"/>
+                        <outlet property="pointInput" destination="pd5-7t-0R2" id="Ra3-Lu-Sgp"/>
+                        <outlet property="saveBtn" destination="h8g-Wn-EXr" id="vKO-lG-KR7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OtK-4R-Jkw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
