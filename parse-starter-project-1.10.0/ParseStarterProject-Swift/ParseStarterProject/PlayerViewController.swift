@@ -70,6 +70,50 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
+    func randomNumber(range: Range<Int> = 0...3) -> Int {
+        let min = range.startIndex
+        let max = range.endIndex
+        return Int(arc4random_uniform(UInt32(max - min))) + min
+    }
+    
+    func randomLoadData(){
+        
+        var sortByArray = ["First", "Last", "createdAt", "objectID"]
+        let randomIndex = randomNumber()
+        
+        self.playerArray.removeAllObjects()
+        
+        let query = PFQuery(className: "Player")
+        
+        query.orderByAscending(sortByArray[randomIndex])
+        
+        query.findObjectsInBackgroundWithBlock{
+            (objects:[PFObject]?, error:NSError?) -> Void in
+            if error == nil{
+                
+                //loop objects array
+                for object in objects!{
+                    let player = object as PFObject
+                    
+                    //add element into array
+                    self.playerArray.addObject(player)
+                    
+                                    }
+                // tell refresh control it can stop showing up now
+                if self.refreshControl.refreshing
+                {
+                    self.refreshControl.endRefreshing()
+                }
+                
+                self.playerTable.reloadData()
+                
+            } else{
+                
+            }
+        }
+
+    }
+    
     func refresh(sender:AnyObject) {
         self.loadPlayerData()
     }
@@ -106,6 +150,7 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
     @IBAction func randomBtn(sender: AnyObject) {
+        randomLoadData()
     }
     
     @IBAction func addBtn(sender: AnyObject) {
