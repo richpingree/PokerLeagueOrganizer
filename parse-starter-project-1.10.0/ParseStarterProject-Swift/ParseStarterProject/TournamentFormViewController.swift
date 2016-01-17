@@ -59,6 +59,14 @@ class TournamentFormViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        
+        
+        let timeString = dateFormatter.stringFromDate(NSDate())
+
+        tourneyDate.text = timeString
     }
 
     override func didReceiveMemoryWarning() {

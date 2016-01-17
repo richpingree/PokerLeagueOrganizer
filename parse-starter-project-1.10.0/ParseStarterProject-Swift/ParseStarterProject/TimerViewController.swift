@@ -16,8 +16,7 @@ class TimerViewController: UIViewController {
     @IBOutlet weak var bTimer: UILabel!
     
     var timer = NSTimer()
-    var count = 120.0
-//    var count:NSTimeInterval = 120
+    var count = 1500.0
     var array = NSMutableArray()   //Change your array type to NSMutableArray
     var arrayInt = 0
     @IBOutlet weak var anteLabel: UILabel!
@@ -43,14 +42,16 @@ class TimerViewController: UIViewController {
         if let pUserName = PFUser.currentUser()?["username"] as? String {
             userLabel.text = "Welcome" + " " + pUserName
         }
-        //bTimer.text = timeString(count)
-        //sBlindLabel.text = "5"
         loadData1()
         
         
     }
     
     override func viewWillAppear(animated: Bool) {
+        if let pUserName = PFUser.currentUser()?["username"] as? String {
+            userLabel.text = "Welcome" + " " + pUserName
+        }
+
         loadData1()
     }
     
