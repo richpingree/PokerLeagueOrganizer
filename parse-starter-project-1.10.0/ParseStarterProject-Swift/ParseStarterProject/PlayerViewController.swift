@@ -18,11 +18,14 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     @IBOutlet weak var playerTable: UITableView!
     
     var playerArray : NSMutableArray = []
+    var sortByArray = ["First", "Last", "createdAt", "objectID"]
+    
     var refreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let sortCount = (sortByArray.count - 1)
         // Do any additional setup after loading the view.
         playerTable.delegate = self
         playerTable.dataSource = self
@@ -78,7 +81,7 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func randomLoadData(){
         
-        var sortByArray = ["First", "Last", "createdAt", "objectID"]
+        
         let randomIndex = randomNumber()
         
         self.playerArray.removeAllObjects()
@@ -127,7 +130,7 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let cell:UITableViewCell = self.playerTable.dequeueReusableCellWithIdentifier("playerCell")! as UITableViewCell
         
         let tempObject = playerArray.objectAtIndex(indexPath.row) as! PFObject
-        cell.textLabel?.text = tempObject.objectForKey("First") as? String
+        cell.textLabel?.text = (tempObject.objectForKey("First") as? String)! + " " + (tempObject.objectForKey("Last") as? String)!
         
         return cell
     }
