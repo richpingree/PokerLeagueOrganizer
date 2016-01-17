@@ -22,6 +22,20 @@ class RegisterViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        userTxt.text = nil
+        emailTxt.text = nil
+        confirmEmailTxt.text = nil
+        passTxt.text = nil
+        confirmPassTxt.text = nil
+        
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        userTxt.text = nil
+        emailTxt.text = nil
+        confirmEmailTxt.text = nil
+        passTxt.text = nil
+        confirmPassTxt.text = nil
     }
 
     override func didReceiveMemoryWarning() {

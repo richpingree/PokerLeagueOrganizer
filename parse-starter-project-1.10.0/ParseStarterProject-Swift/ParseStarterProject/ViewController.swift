@@ -30,7 +30,9 @@ class ViewController: UIViewController {
             NSLog("Is connected to the Internet!")
         }else{
             NSLog("Not connected")
-            
+            let alert = UIAlertView(title: "Not Connected to Internet", message: "Please check connection and try again", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+
         }
         
         

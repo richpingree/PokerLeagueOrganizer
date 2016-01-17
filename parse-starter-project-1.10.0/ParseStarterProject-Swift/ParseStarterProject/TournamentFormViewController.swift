@@ -54,6 +54,7 @@ class TournamentFormViewController: UIViewController {
     @IBOutlet weak var player10PointsInput: UITextField!
     @IBOutlet weak var player10WinningsInput: UITextField!
     
+    @IBOutlet weak var cancelBtn: UIButton!
     @IBOutlet weak var saveBtn: UIButton!
     
     
@@ -429,6 +430,9 @@ class TournamentFormViewController: UIViewController {
         
     }
    
+    @IBAction func cancelBtn(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
 
     @IBAction func saveBtn(sender: AnyObject) {
         checkTourneyDate()
