@@ -54,7 +54,9 @@ class TournamentFormViewController: UIViewController {
     @IBOutlet weak var player10PointsInput: UITextField!
     @IBOutlet weak var player10WinningsInput: UITextField!
     
-       @IBOutlet weak var saveBtn: UIButton!
+    @IBOutlet weak var saveBtn: UIButton!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -73,31 +75,294 @@ class TournamentFormViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    @IBAction func tourneyDateEditing(sender: UITextField) {
-        let datePickerView:UIDatePicker = UIDatePicker()
-        
-        datePickerView.datePickerMode = UIDatePickerMode.Date
-        
-        sender.inputView = datePickerView
-        
-        datePickerView.addTarget(self, action: Selector("datePickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+    //check that all fields are complete
+    func checkTourneyDate() {
+        if (tourneyDate.text!.isEmpty){
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+            
+            let timeString = dateFormatter.stringFromDate(NSDate())
+            
+            tourneyDate.text = timeString
+            checkP1Name()
+        } else{
+            checkP1Name()
+        }
     }
     
-    func datePickerValueChanged(sender:UIDatePicker) {
-        
-        let dateFormatter = NSDateFormatter()
-        
-        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-        
-        dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
-        
-        tourneyDate.text = dateFormatter.stringFromDate(sender.date)
-        
+    func checkP1Name(){
+        if (player1NameInput.text!.isEmpty){
+            player1NameInput.text = "No Player"
+            checkP1Points()
+        } else{
+            checkP1Points()
+        }
     }
-   
+    
+    func checkP1Points(){
+        if (player1PointsInput.text!.isEmpty){
+            player1PointsInput.text = "0"
+            checkP1Earnings()
+        }else{
+            checkP1Earnings()
+        }
+    }
+    
+    func checkP1Earnings(){
+        if (player1WinningsInput.text!.isEmpty){
+            player1WinningsInput.text = "0"
+            checkP2Name()
+        }else{
+            checkP2Name()
+        }
+    }
+    
+    func checkP2Name(){
+        if (player2NameInput.text!.isEmpty){
+            player2NameInput.text = "No Player"
+            checkP2Points()
+        } else{
+            checkP2Points()
+        }
+    }
+    
+    func checkP2Points(){
+        if (player2PointsInput.text!.isEmpty){
+            player2PointsInput.text = "0"
+            checkP2Earnings()
+        }else{
+            checkP2Earnings()
+        }
+    }
+    
+    func checkP2Earnings(){
+        if (player2WinningsInput.text!.isEmpty){
+            player2WinningsInput.text = "0"
+            checkP3Name()
+        }else{
+            checkP3Name()
+        }
+    }
+    
+    func checkP3Name(){
+        if (player3NameInput.text!.isEmpty){
+            player3NameInput.text = "No Player"
+            checkP3Points()
+        } else{
+            checkP3Points()
+        }
+    }
+    
+    func checkP3Points(){
+        if (player3PointsInput.text!.isEmpty){
+            player3PointsInput.text = "0"
+            checkP3Earnings()
+        }else{
+            checkP3Earnings()
+        }
+    }
+    
+    func checkP3Earnings(){
+        if (player3WinningsInput.text!.isEmpty){
+            player3WinningsInput.text = "0"
+            checkP4Name()
+        }else{
+            checkP4Name()
+        }
+    }
 
-    @IBAction func saveBtn(sender: AnyObject) {
+    func checkP4Name(){
+        if (player4NameInput.text!.isEmpty){
+            player4NameInput.text = "No Player"
+            checkP4Points()
+        } else{
+            checkP4Points()
+        }
+    }
+    
+    func checkP4Points(){
+        if (player4PointsInput.text!.isEmpty){
+            player4PointsInput.text = "0"
+            checkP4Earnings()
+        }else{
+            checkP4Earnings()
+        }
+    }
+    
+    func checkP4Earnings(){
+        if (player4WinningsInput.text!.isEmpty){
+            player4WinningsInput.text = "0"
+            checkP5Name()
+        }else{
+            checkP5Name()
+        }
+    }
+
+    func checkP5Name(){
+        if (player5NameInput.text!.isEmpty){
+            player5NameInput.text = "No Player"
+            checkP5Points()
+        } else{
+            checkP5Points()
+        }
+    }
+    
+    func checkP5Points(){
+        if (player5PointsInput.text!.isEmpty){
+            player5PointsInput.text = "0"
+            checkP5Earnings()
+        }else{
+            checkP5Earnings()
+        }
+    }
+    
+    func checkP5Earnings(){
+        if (player5WinningsInput.text!.isEmpty){
+            player5WinningsInput.text = "0"
+            checkP6Name()
+        }else{
+            checkP6Name()
+        }
+    }
+    
+    func checkP6Name(){
+        if (player6NameInput.text!.isEmpty){
+            player6NameInput.text = "No Player"
+            checkP6Points()
+        } else{
+            checkP6Points()
+        }
+    }
+    
+    func checkP6Points(){
+        if (player6PointsInput.text!.isEmpty){
+            player6PointsInput.text = "0"
+            checkP6Earnings()
+        }else{
+            checkP6Earnings()
+        }
+    }
+    
+    func checkP6Earnings(){
+        if (player6WinningsInput.text!.isEmpty){
+            player6WinningsInput.text = "0"
+            checkP7Name()
+        }else{
+            checkP7Name()
+        }
+    }
+
+
+    func checkP7Name(){
+        if (player7NameInput.text!.isEmpty){
+            player7NameInput.text = "No Player"
+            checkP7Points()
+        } else{
+            checkP7Points()
+        }
+    }
+    
+    func checkP7Points(){
+        if (player7PointsInput.text!.isEmpty){
+            player7PointsInput.text = "0"
+            checkP7Earnings()
+        }else{
+            checkP7Earnings()
+        }
+    }
+    
+    func checkP7Earnings(){
+        if (player7WinningsInput.text!.isEmpty){
+            player7WinningsInput.text = "0"
+            checkP8Name()
+        }else{
+            checkP8Name()
+        }
+    }
+
+    func checkP8Name(){
+        if (player8NameInput.text!.isEmpty){
+            player8NameInput.text = "No Player"
+            checkP8Points()
+        } else{
+            checkP8Points()
+        }
+    }
+    
+    func checkP8Points(){
+        if (player8PointsInput.text!.isEmpty){
+            player8PointsInput.text = "0"
+            checkP8Earnings()
+        }else{
+            checkP8Earnings()
+        }
+    }
+    
+    func checkP8Earnings(){
+        if (player8WinningsInput.text!.isEmpty){
+            player8WinningsInput.text = "0"
+            checkP9Name()
+        }else{
+            checkP9Name()
+        }
+    }
+
+    func checkP9Name(){
+        if (player9NameInput.text!.isEmpty){
+            player9NameInput.text = "No Player"
+            checkP9Points()
+        } else{
+            checkP9Points()
+        }
+    }
+    
+    func checkP9Points(){
+        if (player9PointsInput.text!.isEmpty){
+            player9PointsInput.text = "0"
+            checkP9Earnings()
+        }else{
+            checkP9Earnings()
+        }
+    }
+    
+    func checkP9Earnings(){
+        if (player9WinningsInput.text!.isEmpty){
+            player9WinningsInput.text = "0"
+            checkP10Name()
+        }else{
+            checkP10Name()
+        }
+    }
+    
+    func checkP10Name(){
+        if (player10NameInput.text!.isEmpty){
+            player10NameInput.text = "No Player"
+            checkP10Points()
+        } else{
+            checkP10Points()
+        }
+    }
+    
+    func checkP10Points(){
+        if (player10PointsInput.text!.isEmpty){
+            player10PointsInput.text = "0"
+            checkP10Earnings()
+        }else{
+            checkP10Earnings()
+        }
+    }
+    
+    func checkP10Earnings(){
+        if (player10WinningsInput.text!.isEmpty){
+            player10WinningsInput.text = "0"
+            let alert = UIAlertView(title: "Empty Fields Existed", message: "This fields have been auto populated. Please double check that data is correct and press the Save button again", delegate: nil, cancelButtonTitle: "OK")
+            alert.show()
+        }else{
+            saveTourney()
+        }
+    }
+
+    func saveTourney() {
         let newTourney = PFObject(className: "Tournaments")
         newTourney["Date"] = tourneyDate.text
         newTourney["P1Name"] = player1NameInput.text
@@ -139,6 +404,34 @@ class TournamentFormViewController: UIViewController {
                 
             }
         }
+
+    }
+    
+    @IBAction func tourneyDateEditing(sender: UITextField) {
+        let datePickerView:UIDatePicker = UIDatePicker()
+        
+        datePickerView.datePickerMode = UIDatePickerMode.Date
+        
+        sender.inputView = datePickerView
+        
+        datePickerView.addTarget(self, action: Selector("datePickerValueChanged:"), forControlEvents: UIControlEvents.ValueChanged)
+    }
+    
+    func datePickerValueChanged(sender:UIDatePicker) {
+        
+        let dateFormatter = NSDateFormatter()
+        
+        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
+        
+        dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
+        
+        tourneyDate.text = dateFormatter.stringFromDate(sender.date)
+        
+    }
+   
+
+    @IBAction func saveBtn(sender: AnyObject) {
+        checkTourneyDate()
     }
 
     /*

@@ -29,7 +29,7 @@ class RegisterViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-        //check that all fields are complete
+    //check that all fields are complete
     func checkFieldComplete() {
         if userTxt.text!.isEmpty || emailTxt.text!.isEmpty || confirmEmailTxt.text!.isEmpty || passTxt.text!.isEmpty || confirmEmailTxt.text!.isEmpty {
             let alert = UIAlertView(title: "All Fields are Required", message: "Please check the fields and try again", delegate: nil, cancelButtonTitle: "OK")

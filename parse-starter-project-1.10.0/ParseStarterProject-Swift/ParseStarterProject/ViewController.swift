@@ -30,6 +30,7 @@ class ViewController: UIViewController {
             NSLog("Is connected to the Internet!")
         }else{
             NSLog("Not connected")
+            
         }
         
         
@@ -59,7 +60,8 @@ class ViewController: UIViewController {
                 self.LoginPassTxt.text = nil
                 self.performSegueWithIdentifier("login", sender: self)
             }else{
-                _ = UIAlertView(title: "Ooops", message: "Username is already taken", delegate: nil, cancelButtonTitle: "OK")
+                let alert = UIAlertView(title: "Ooops", message: "Username is already taken or the Email is already registered", delegate: nil, cancelButtonTitle: "OK")
+                alert.show()    
             }
         }
     }

@@ -45,6 +45,7 @@ class TournamentViewController: UIViewController, UITableViewDelegate, UITableVi
         
         let query = PFQuery(className: "Tournaments")
         
+        
         query.findObjectsInBackgroundWithBlock {
             (objects:[PFObject]?, error: NSError?) -> Void in
             if error == nil{

@@ -579,6 +579,15 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="3rd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6F-5h-d6B">
+                                <rect key="frame" x="123" y="257" width="35" height="25"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="25" id="MPB-74-ovl"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Richard Pingree" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1az-lh-Eve">
                                 <rect key="frame" x="178" y="257" width="122" height="25"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
@@ -714,12 +723,6 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Wz-HC-Ehb">
-                                <rect key="frame" x="332" y="430" width="42" height="25"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="$0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6sk-iY-O3b">
                                 <rect key="frame" x="424" y="430" width="42" height="25"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
@@ -810,11 +813,8 @@
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="3rd" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m6F-5h-d6B">
-                                <rect key="frame" x="123" y="257" width="35" height="25"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="25" id="MPB-74-ovl"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="2" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Wz-HC-Ehb">
+                                <rect key="frame" x="332" y="430" width="42" height="25"/>
                                 <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -986,9 +986,9 @@
                     <connections>
                         <outlet property="date" destination="xVd-CF-P3e" id="1K6-kO-hsa"/>
                         <outlet property="doneBtn" destination="78a-kG-mOG" id="W4g-RD-feS"/>
-                        <outlet property="eighthEarnings" destination="6sk-iY-O3b" id="C72-F8-Hov"/>
+                        <outlet property="eighthEarnings" destination="6sk-iY-O3b" id="QWs-Ol-tl0"/>
                         <outlet property="eighthName" destination="lYq-l3-zJh" id="Fpv-xW-t7x"/>
-                        <outlet property="eighthPoints" destination="6sk-iY-O3b" id="nlo-Bg-Pby"/>
+                        <outlet property="eighthPoints" destination="4Wz-HC-Ehb" id="jVa-md-gBD"/>
                         <outlet property="fifthEarnings" destination="Pbs-pY-la1" id="1v6-nO-JMm"/>
                         <outlet property="fifthName" destination="X80-2u-F8e" id="0HT-XY-dqn"/>
                         <outlet property="fifthPoints" destination="fhf-Jv-xId" id="va7-Nz-sh7"/>
