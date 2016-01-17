@@ -177,12 +177,14 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
                 if let detailIndex = playerTable.indexPathForSelectedRow?.row{
                     let currentObject = playerArray.objectAtIndex(detailIndex) as! PFObject
                     
+                    let objectId = currentObject.objectId as String!
                     let firstName = currentObject.objectForKey("First") as? String
                     let lastName = currentObject.objectForKey("Last") as? String
                     let phone = currentObject.objectForKey("Phone") as? String
                     let points = currentObject.objectForKey("Points") as? String
                     let earnings = currentObject.objectForKey("Earnings") as? String
                     
+                    destination.objectId = objectId
                     destination.firstName = firstName
                     destination.lastName = lastName
                     destination.phone = phone

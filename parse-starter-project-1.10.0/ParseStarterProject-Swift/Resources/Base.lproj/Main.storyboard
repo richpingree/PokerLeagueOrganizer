@@ -10,7 +10,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController storyboardIdentifier="Login" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Login" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" customClass="ViewController" customModule="PokerLeagueOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -131,7 +131,7 @@
         <!--Forgot Password View Controller-->
         <scene sceneID="gbc-xa-n1O">
             <objects>
-                <viewController id="sPh-ZM-gEF" customClass="ForgotPasswordViewController" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="sPh-ZM-gEF" customClass="ForgotPasswordViewController" customModule="PokerLeagueOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="23J-1Q-dwO"/>
                         <viewControllerLayoutGuide type="bottom" id="Vcq-YQ-18b"/>
@@ -227,7 +227,7 @@
         <!--Register View Controller-->
         <scene sceneID="EWc-zk-NLU">
             <objects>
-                <viewController id="6aE-Mw-SQA" customClass="RegisterViewController" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6aE-Mw-SQA" customClass="RegisterViewController" customModule="PokerLeagueOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Y7k-3x-4rd"/>
                         <viewControllerLayoutGuide type="bottom" id="euP-QL-uQv"/>
@@ -379,7 +379,7 @@
         <!--Players-->
         <scene sceneID="opp-bk-Uyb">
             <objects>
-                <viewController id="YwL-6c-Onp" customClass="PlayerViewController" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="YwL-6c-Onp" customClass="PlayerViewController" customModule="PokerLeagueOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="5c7-Tv-4fz"/>
                         <viewControllerLayoutGuide type="bottom" id="quv-ZG-37N"/>
@@ -482,7 +482,7 @@
         <!--Tournament Details View Controller-->
         <scene sceneID="xhM-aP-Q8I">
             <objects>
-                <viewController id="KLh-Bg-kaI" customClass="TournamentDetailsViewController" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="KLh-Bg-kaI" customClass="TournamentDetailsViewController" customModule="PokerLeagueOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7Fs-Qv-Zv5"/>
                         <viewControllerLayoutGuide type="bottom" id="hcf-cr-1SI"/>
@@ -1025,7 +1025,7 @@
         <!--Edit Player View Controller-->
         <scene sceneID="cN5-ES-Aa3">
             <objects>
-                <viewController id="eMj-yU-kJC" customClass="EditPlayerViewController" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eMj-yU-kJC" customClass="EditPlayerViewController" customModule="PokerLeagueOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="xgL-T3-JlG"/>
                         <viewControllerLayoutGuide type="bottom" id="rVR-vh-bBK"/>
@@ -1200,7 +1200,7 @@
         <!--Player Form View Controller-->
         <scene sceneID="kMx-50-iqK">
             <objects>
-                <viewController id="zDL-a2-d2Q" customClass="PlayerFormViewController" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zDL-a2-d2Q" customClass="PlayerFormViewController" customModule="PokerLeagueOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="bqm-jc-DkI"/>
                         <viewControllerLayoutGuide type="bottom" id="eDp-sU-sGH"/>
@@ -1375,7 +1375,7 @@
         <!--Tournaments-->
         <scene sceneID="H9P-jd-YOm">
             <objects>
-                <viewController id="zb6-DM-dNd" customClass="TournamentViewController" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="zb6-DM-dNd" customClass="TournamentViewController" customModule="PokerLeagueOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gbN-Hn-XKO"/>
                         <viewControllerLayoutGuide type="bottom" id="v8r-9Z-CGm"/>
@@ -1460,7 +1460,7 @@
         <!--Tournament Form View Controller-->
         <scene sceneID="FPd-4h-pkK">
             <objects>
-                <viewController id="lYa-fE-jbU" customClass="TournamentFormViewController" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="lYa-fE-jbU" customClass="TournamentFormViewController" customModule="PokerLeagueOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="4ms-4l-au3"/>
                         <viewControllerLayoutGuide type="bottom" id="3WU-cV-leJ"/>
@@ -1995,7 +1995,7 @@
         <!--Timer-->
         <scene sceneID="AhA-P0-y7l">
             <objects>
-                <viewController id="cEh-1A-wAB" customClass="TimerViewController" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cEh-1A-wAB" customClass="TimerViewController" customModule="PokerLeagueOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="0C1-S0-H9G"/>
                         <viewControllerLayoutGuide type="bottom" id="P1h-0n-kIk"/>
@@ -2267,7 +2267,7 @@
         <!--Blinds View Controller-->
         <scene sceneID="PcF-zR-wP3">
             <objects>
-                <viewController id="QbV-lL-mFB" customClass="BlindsViewController" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QbV-lL-mFB" customClass="BlindsViewController" customModule="PokerLeagueOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ckj-Ef-yhS"/>
                         <viewControllerLayoutGuide type="bottom" id="QQ6-rZ-7Iw"/>
@@ -2483,7 +2483,7 @@
         <!--Rules View Controller-->
         <scene sceneID="akf-hF-iVq">
             <objects>
-                <viewController id="ddU-Hn-62q" customClass="RulesViewController" customModule="ParseStarterProject_Swift" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ddU-Hn-62q" customClass="RulesViewController" customModule="PokerLeagueOrganizer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="1AS-Bj-FVd"/>
                         <viewControllerLayoutGuide type="bottom" id="h3o-zi-v4h"/>

@@ -11,6 +11,7 @@ import Parse
 
 class EditPlayerViewController: UIViewController {
     
+    var objectId: String!
     var firstName: String!
     var lastName: String!
     var phone: String!
@@ -33,6 +34,7 @@ class EditPlayerViewController: UIViewController {
         self.phoneInput.text = self.phone
         self.pointInput.text = self.points
         self.earningInput.text = self.earnings
+        print(self.objectId)
         
     }
 
@@ -46,6 +48,32 @@ class EditPlayerViewController: UIViewController {
     }
     
     @IBAction func saveBtn(sender: AnyObject) {
+        
+        let currentObject = self.objectId
+        
+        let query = PFQuery(className: "Player")
+        
+        query.getObjectInBackgroundWithId(currentObject) {
+            (player: PFObject?, error: NSError?) -> Void in
+            if error != nil {
+                print(error)
+            } else if let player = player {
+                player["First"] = self.firstNameInput.text
+                player["Last"] = self.lastNameInput.text
+                player["Phone"] = self.phoneInput.text
+                player["Points"] = self.pointInput.text
+                player["Earnings"] = self.earningInput.text
+                player.saveEventually{
+                    (success: Bool, error: NSError?) -> Void in
+                    if (success){
+                        self.dismissViewControllerAnimated(true, completion: nil)
+                    }else{
+                                            
+                    }
+                }
+            }
+        }
+
     }
     
     /*
