@@ -9,16 +9,20 @@
 
 import UIKit
 import Parse
+import AVFoundation
 
 class TimerViewController: UIViewController {
 
-    @IBOutlet weak var userLabel: UILabel!
-    @IBOutlet weak var bTimer: UILabel!
-    
     var timer = NSTimer()
     var count = 1500.0
     var array = NSMutableArray()   //Change your array type to NSMutableArray
     var arrayInt = 0
+
+    var alarm:AVAudioPlayer!
+    
+    @IBOutlet weak var userLabel: UILabel!
+    @IBOutlet weak var bTimer: UILabel!
+    
     @IBOutlet weak var anteLabel: UILabel!
     @IBOutlet weak var sBlindLabel: UILabel!
     @IBOutlet weak var bBlindLabel: UILabel!
@@ -51,11 +55,26 @@ class TimerViewController: UIViewController {
         if let pUserName = PFUser.currentUser()?["username"] as? String {
             userLabel.text = "Welcome" + " " + pUserName
         }
+        
+        if (play.enabled.boolValue == true){
+            loadData1()
+        }
 
-        loadData1()
     }
     
-    
+    func playSound(){
+        let path = NSBundle.mainBundle().pathForResource("alarm.mp3", ofType:nil)!
+        let url = NSURL(fileURLWithPath: path)
+        
+        do {
+            let sound = try AVAudioPlayer(contentsOfURL: url)
+            alarm = sound
+            sound.play()
+        } catch {
+            // couldn't load file :(
+        }
+
+    }
     func loadData1() {
         
         self.array.removeAllObjects()
@@ -105,6 +124,7 @@ class TimerViewController: UIViewController {
             
         }else{
             //timer.invalidate();
+            playSound()
             self.arrayInt++
             loadData1()
         }
@@ -129,6 +149,7 @@ class TimerViewController: UIViewController {
     @IBAction func play(sender: AnyObject) {
         pause.enabled = true
         play.enabled = false
+        //loadData1()
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("update"), userInfo: nil, repeats: true)
     }
     
@@ -141,6 +162,7 @@ class TimerViewController: UIViewController {
     
     //next button action
     @IBAction func nextBtn(sender: AnyObject) {
+        playSound()
         self.arrayInt++
         loadData1()
     }
@@ -158,6 +180,8 @@ class TimerViewController: UIViewController {
     //reset button action
     @IBAction func resetBtn(sender: AnyObject) {
         arrayInt = 0
+        play.enabled = true
+        pause.enabled = false
         timer.invalidate()
         loadData1()
     }
