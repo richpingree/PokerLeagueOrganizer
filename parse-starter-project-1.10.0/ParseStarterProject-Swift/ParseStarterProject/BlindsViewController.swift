@@ -83,11 +83,12 @@ class BlindsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let tempObject = blindArray.objectAtIndex(indexPath.row) as! PFObject
         
         let timeString = "Time: " + (tempObject.objectForKey("Time") as? String)!
+        let anteString = "Ante: " + (tempObject.objectForKey("Ante") as? String)!
         let smallString = "Small Blind: " + (tempObject.objectForKey("Small") as? String)!
         let bigString = "Big Blind: " + (tempObject.objectForKey("Big") as? String)!
         
-        cell.textLabel?.text = timeString 
-        cell.detailTextLabel?.text = smallString + " " + bigString
+        cell.textLabel?.text = timeString + " min"
+        cell.detailTextLabel?.text = anteString + " " + smallString + " " + bigString
         
         return cell
     }

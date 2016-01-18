@@ -369,7 +369,7 @@
                         <outlet property="loginBtn" destination="FYk-Bj-CE2" id="xgw-dq-Ysc"/>
                         <outlet property="passTxt" destination="FIL-Sc-GGb" id="R5g-Ks-XQe"/>
                         <outlet property="userTxt" destination="Po1-fE-R0X" id="Yr5-ah-IMR"/>
-                        <segue destination="cEh-1A-wAB" kind="presentation" identifier="register" id="7md-pU-MSg"/>
+                        <segue destination="rxg-VV-oNO" kind="presentation" identifier="register" id="ge2-if-mtc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1P0-gp-yXM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -441,7 +441,7 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="eMj-yU-kJC" kind="showDetail" identifier="segueToEditPlayer" id="GQe-gO-IH9"/>
+                                            <segue destination="eMj-yU-kJC" kind="presentation" identifier="segueToEditPlayer" id="GQe-gO-IH9"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -2564,6 +2564,7 @@
         <image name="redBtn.png" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="7md-pU-MSg"/>
+        <segue reference="ge2-if-mtc"/>
+        <segue reference="mrM-xk-lEU"/>
     </inferredMetricsTieBreakers>
 </document>

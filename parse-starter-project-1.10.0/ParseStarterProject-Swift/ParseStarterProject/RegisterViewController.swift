@@ -99,14 +99,19 @@ class RegisterViewController: UIViewController {
     @IBAction func cancelBtn(sender: AnyObject) {
         self.dismissViewControllerAnimated(true, completion: nil)
     }
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
+        if segue.identifier == "register" {
+            if let destination = segue.destinationViewController as? TimerViewController {
+                // Pass the selected object to the new view controller.
+            }
+            }
+            
+        }
+    
 
 }
