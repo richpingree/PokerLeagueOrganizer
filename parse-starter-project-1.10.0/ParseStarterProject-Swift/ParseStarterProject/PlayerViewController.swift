@@ -25,7 +25,7 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let sortCount = (sortByArray.count - 1)
+       
         // Do any additional setup after loading the view.
         playerTable.delegate = self
         playerTable.dataSource = self

@@ -42,24 +42,26 @@ class TimerViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
-        if let pUserName = PFUser.currentUser()?["username"] as? String {
-            userLabel.text = "Welcome" + " " + pUserName
-        }
         loadData1()
+        
+        let pUserName = PFUser.currentUser()?["username"] as? String
+            userLabel.text = "Welcome" + " " + pUserName!
+        
+        
         
         
     }
     
     override func viewWillAppear(animated: Bool) {
-        if let pUserName = PFUser.currentUser()?["username"] as? String {
-            userLabel.text = "Welcome" + " " + pUserName
-        }
-        
-        if (play.enabled.boolValue == true){
+        if (play.enabled.boolValue == true && pause.enabled.boolValue == true){
             loadData1()
         }
 
+        
+        let pUserName = PFUser.currentUser()?["username"] as? String
+            userLabel.text = "Welcome" + " " + pUserName!
+        
+        
     }
     
     func playSound(){
@@ -188,6 +190,7 @@ class TimerViewController: UIViewController {
     
     //logout button action
     @IBAction func logoutBtn(sender: AnyObject) {
+        timer.invalidate()
         PFUser.logOut()
         //self.dismissViewControllerAnimated(true, completion: nil)
         dispatch_async(dispatch_get_main_queue(), { () -> Void in
