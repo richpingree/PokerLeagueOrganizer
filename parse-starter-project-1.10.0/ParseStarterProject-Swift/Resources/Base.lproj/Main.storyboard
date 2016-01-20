@@ -53,7 +53,6 @@
                                 <state key="normal" title="LOGIN" backgroundImage="blackBtn60.png"/>
                                 <connections>
                                     <action selector="loginBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="11x-oq-fwd"/>
-                                    <segue destination="rxg-VV-oNO" kind="show" id="wfz-Az-77q"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M0W-Y9-zrn">
@@ -122,6 +121,7 @@
                         <outlet property="passBtn" destination="M0W-Y9-zrn" id="YDR-Uc-14t"/>
                         <outlet property="registerBtn" destination="b2p-C1-Rla" id="tM0-eO-hIt"/>
                         <segue destination="cEh-1A-wAB" kind="presentation" identifier="login" id="WS7-1M-QGb"/>
+                        <segue destination="rxg-VV-oNO" kind="presentation" identifier="login" id="x9e-c8-WND"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -2786,7 +2786,7 @@ Buying Chips
         <image name="redBtn.png" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ge2-if-mtc"/>
-        <segue reference="mrM-xk-lEU"/>
+        <segue reference="WS7-1M-QGb"/>
+        <segue reference="x9e-c8-WND"/>
     </inferredMetricsTieBreakers>
 </document>

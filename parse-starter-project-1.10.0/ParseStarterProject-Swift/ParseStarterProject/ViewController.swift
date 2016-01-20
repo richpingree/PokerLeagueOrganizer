@@ -62,7 +62,7 @@ class ViewController: UIViewController {
                 self.LoginPassTxt.text = nil
                 self.performSegueWithIdentifier("login", sender: self)
             }else{
-                let alert = UIAlertView(title: "Ooops", message: "Username is already taken or the Email is already registered", delegate: nil, cancelButtonTitle: "OK")
+                let alert = UIAlertView(title: "Invalid Username or Password", message: "Please try again", delegate: nil, cancelButtonTitle: "OK")
                 alert.show()    
             }
         }
