@@ -120,7 +120,6 @@
                         <outlet property="loginBtn" destination="63x-HP-QI6" id="GnN-dU-qwr"/>
                         <outlet property="passBtn" destination="M0W-Y9-zrn" id="YDR-Uc-14t"/>
                         <outlet property="registerBtn" destination="b2p-C1-Rla" id="tM0-eO-hIt"/>
-                        <segue destination="cEh-1A-wAB" kind="presentation" identifier="login" id="WS7-1M-QGb"/>
                         <segue destination="rxg-VV-oNO" kind="presentation" identifier="login" id="x9e-c8-WND"/>
                     </connections>
                 </viewController>
@@ -2786,7 +2785,6 @@ Buying Chips
         <image name="redBtn.png" width="60" height="60"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WS7-1M-QGb"/>
         <segue reference="x9e-c8-WND"/>
     </inferredMetricsTieBreakers>
 </document>
