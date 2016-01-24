@@ -50,6 +50,9 @@ class TimerViewController: UIViewController {
         
         
         
+        
+        
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -143,8 +146,14 @@ class TimerViewController: UIViewController {
     
     //previous button action
     @IBAction func prevBtn(sender: AnyObject) {
-        self.arrayInt--
-        loadData1()
+        if arrayInt  == 0 {
+            prevBtn.enabled = false
+        }else{
+        
+            self.arrayInt--
+            loadData1()
+        }
+        
     }
     
     //play button action
@@ -164,6 +173,7 @@ class TimerViewController: UIViewController {
     
     //next button action
     @IBAction func nextBtn(sender: AnyObject) {
+        prevBtn.enabled = true
         playSound()
         self.arrayInt++
         loadData1()
