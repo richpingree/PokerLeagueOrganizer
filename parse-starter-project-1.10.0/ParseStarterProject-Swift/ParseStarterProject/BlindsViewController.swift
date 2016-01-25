@@ -109,6 +109,18 @@ class BlindsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     func tableView(blindTable: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         
+        self.blindsTable.editing = !self.editing
+    }
+    
+    func tableView(blindTable: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(blindTable: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+        
+        let itemToMove = self.blindArray[fromIndexPath.row]
+        self.blindArray.removeObjectAtIndex(fromIndexPath.row)
+        self.blindArray.insertObject(itemToMove, atIndex: toIndexPath.row)
     }
 
     override func didReceiveMemoryWarning() {
@@ -119,6 +131,7 @@ class BlindsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     
     @IBAction func breakSwitch(sender: AnyObject) {
         if (breakSwitch.on){
+            self.timeInput.text = "10"
             self.anteInput.enabled = false
             self.anteInput.text = "0"
             self.smallInput.enabled = false
@@ -127,6 +140,7 @@ class BlindsViewController: UIViewController, UITableViewDelegate, UITableViewDa
             self.bigInput.text = "0"
             
         }else{
+            self.timeInput.text = "25"
             self.anteInput.enabled = true
             self.anteInput.text = "0"
             self.smallInput.enabled = true
