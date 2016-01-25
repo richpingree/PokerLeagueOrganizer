@@ -108,20 +108,23 @@ class BlindsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
     func tableView(blindTable: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        //puts table in edit mode
         
-        self.blindsTable.editing = !self.editing
+        //self.blindsTable.editing = !self.editing
     }
     
-    func tableView(blindTable: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-        return true
-    }
-    
-    func tableView(blindTable: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-        
-        let itemToMove = self.blindArray[fromIndexPath.row]
-        self.blindArray.removeObjectAtIndex(fromIndexPath.row)
-        self.blindArray.insertObject(itemToMove, atIndex: toIndexPath.row)
-    }
+    //allows for row to move
+//    func tableView(blindTable: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+//        return true
+//    }
+
+    //moves the row
+//    func tableView(blindTable: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+//        
+//        let itemToMove = self.blindArray[fromIndexPath.row]
+//        self.blindArray.removeObjectAtIndex(fromIndexPath.row)
+//        self.blindArray.insertObject(itemToMove, atIndex: toIndexPath.row)
+//    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
