@@ -3002,6 +3002,8 @@ Buying Chips
                         <color key="backgroundColor" red="0.0" green="0.38039215686274508" blue="0.015686274509803921" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="Ht2-xo-QCv" firstAttribute="centerX" secondItem="3y0-G7-h2F" secondAttribute="centerX" id="DUG-c9-Trr"/>
+                            <constraint firstItem="Ht2-xo-QCv" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3y0-G7-h2F" secondAttribute="leadingMargin" constant="10" id="LLJ-G2-7D0"/>
+                            <constraint firstAttribute="trailingMargin" relation="greaterThanOrEqual" secondItem="Ht2-xo-QCv" secondAttribute="trailing" constant="10" id="LPz-3s-IQ0"/>
                             <constraint firstItem="z6L-oc-JbW" firstAttribute="centerX" secondItem="3y0-G7-h2F" secondAttribute="centerX" id="Ml2-41-ENN"/>
                             <constraint firstItem="z6L-oc-JbW" firstAttribute="top" secondItem="1AS-Bj-FVd" secondAttribute="bottom" constant="10" id="PzZ-Od-hLx"/>
                             <constraint firstItem="lKt-XY-SMT" firstAttribute="top" secondItem="Ht2-xo-QCv" secondAttribute="bottom" constant="10" id="RoT-bk-dLC"/>
