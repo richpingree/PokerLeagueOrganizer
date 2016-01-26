@@ -63,6 +63,7 @@ class EditPlayerViewController: UIViewController {
                 player["Phone"] = self.phoneInput.text
                 player["Points"] = self.pointInput.text
                 player["Earnings"] = self.earningInput.text
+                //player["PointsInt"] = Int(self.pointInput.text!)
                 player.saveEventually{
                     (success: Bool, error: NSError?) -> Void in
                     if (success){

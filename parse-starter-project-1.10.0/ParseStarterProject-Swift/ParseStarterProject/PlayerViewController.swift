@@ -48,6 +48,7 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
         
         let query = PFQuery(className: "Player")
         
+        //query.orderByDescending("PointsInt")
         query.findObjectsInBackgroundWithBlock{
             (objects:[PFObject]?, error:NSError?) -> Void in
             if error == nil{

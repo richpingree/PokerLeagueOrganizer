@@ -31,6 +31,7 @@ class PlayerFormViewController: UIViewController {
         newPlayer["Phone"] = phoneNumberInput.text
         newPlayer["Points"] = totalPointsInput.text
         newPlayer["Earnings"] = totalEarningsInput.text
+        //newPlayer["PointsInt"] = Int(totalPointsInput.text!)
         newPlayer.saveEventually{
             (success: Bool, error: NSError?) -> Void in
             if (success){

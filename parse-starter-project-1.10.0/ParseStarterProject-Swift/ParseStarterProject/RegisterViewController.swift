@@ -105,11 +105,11 @@ class RegisterViewController: UIViewController {
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
-        if segue.identifier == "register" {
-            if let destination = segue.destinationViewController as? TimerViewController {
-                // Pass the selected object to the new view controller.
-            }
-            }
+//       if segue.identifier == "register" {
+//            if let destination = segue.destinationViewController as? TimerViewController {
+//                // Pass the selected object to the new view controller.
+//            }
+//            }
             
         }
     
