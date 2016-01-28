@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class EditPlayerViewController: UIViewController {
+class EditPlayerViewController: UIViewController, UITextFieldDelegate {
     
     var objectId: String!
     var firstName: String!
@@ -37,6 +37,56 @@ class EditPlayerViewController: UIViewController {
         print(self.objectId)
         
     }
+    
+    //Designate this class as the text fields' delegate and set their keyboards while we're at it
+    func initializeTextFields(){
+        phoneInput.delegate = self
+        phoneInput.keyboardType = UIKeyboardType.NumbersAndPunctuation
+        
+        pointInput.delegate = self
+        pointInput.keyboardType = UIKeyboardType.NumbersAndPunctuation
+        
+        earningInput.delegate = self
+        earningInput.keyboardType = UIKeyboardType.NumbersAndPunctuation
+        
+    }
+    
+    //UITextFieldDelegate events and related methods
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange,
+        replacementString string: String) -> Bool {
+            //We ignore any change that doesn't add characters to the text field.
+            //These changes are things like character deletions and cuts, as well as moving the insertion point.
+            
+            //We still return true to all the change to take place
+            if string.characters.count == 0{
+                return true
+            }
+            
+            //Check to see if the text field contents stell fit the constraints with the new content added to it
+            let currentText = textField.text ?? ""
+            let prospectiveText = (currentText as NSString).stringByReplacingCharactersInRange(range, withString: string)
+            
+            switch textField{
+                
+            case phoneInput:
+                return prospectiveText.isNumeric() &&
+                    prospectiveText.characters.count <= 12
+                
+            case pointInput:
+                return prospectiveText.isNumeric() &&
+                    prospectiveText.characters.count <= 5
+                
+            case earningInput:
+                return prospectiveText.isNumeric() &&
+                    prospectiveText.characters.count <= 5
+                
+            default:
+                return true
+            }
+            
+            
+    }
+
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -63,7 +113,7 @@ class EditPlayerViewController: UIViewController {
                 player["Phone"] = self.phoneInput.text
                 player["Points"] = self.pointInput.text
                 player["Earnings"] = self.earningInput.text
-                //player["PointsInt"] = Int(self.pointInput.text!)
+                player["PointsInt"] = Int(self.pointInput.text!)
                 player.saveEventually{
                     (success: Bool, error: NSError?) -> Void in
                     if (success){

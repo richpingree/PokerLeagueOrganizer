@@ -9,7 +9,7 @@
 import UIKit
 import Parse
 
-class TournamentFormViewController: UIViewController {
+class TournamentFormViewController: UIViewController, UITextFieldDelegate {
 
 
     @IBOutlet weak var tourneyDate: UITextField!
@@ -66,10 +66,178 @@ class TournamentFormViewController: UIViewController {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
         
+        initializeTextFields()
         
         let timeString = dateFormatter.stringFromDate(NSDate())
 
         tourneyDate.text = timeString
+    }
+    
+    //Designate this class as the text fields' delegate and set their keyboards while we're at it
+    func initializeTextFields(){
+        player1PointsInput.delegate = self
+        player1PointsInput.keyboardType = UIKeyboardType.NumbersAndPunctuation
+        
+        player1WinningsInput.delegate = self
+        player1WinningsInput.keyboardType = UIKeyboardType.NumbersAndPunctuation
+        
+        player2PointsInput.delegate = self
+        player2PointsInput.keyboardType = UIKeyboardType.NumbersAndPunctuation
+        
+        player2WinningsInput.delegate = self
+        player2WinningsInput.keyboardType = UIKeyboardType.NumbersAndPunctuation
+        
+        player3PointsInput.delegate = self
+        player3PointsInput.keyboardType = UIKeyboardType.NumbersAndPunctuation
+        
+        player3WinningsInput.delegate = self
+        player3WinningsInput.keyboardType = UIKeyboardType.NumbersAndPunctuation
+        
+        player4PointsInput.delegate = self
+        player4PointsInput.keyboardType = UIKeyboardType.NumbersAndPunctuation
+        
+        player4WinningsInput.delegate = self
+        player4WinningsInput.keyboardType = UIKeyboardType.NumbersAndPunctuation
+        
+        player5PointsInput.delegate = self
+        player5PointsInput.keyboardType = UIKeyboardType.NumbersAndPunctuation
+        
+        player5WinningsInput.delegate = self
+        player5WinningsInput.keyboardType = UIKeyboardType.NumbersAndPunctuation
+        
+        player6PointsInput.delegate = self
+        player6PointsInput.keyboardType = UIKeyboardType.NumbersAndPunctuation
+        
+        player6WinningsInput.delegate = self
+        player6WinningsInput.keyboardType = UIKeyboardType.NumbersAndPunctuation
+        
+        player7PointsInput.delegate = self
+        player7PointsInput.keyboardType = UIKeyboardType.NumbersAndPunctuation
+        
+        player7WinningsInput.delegate = self
+        player7WinningsInput.keyboardType = UIKeyboardType.NumbersAndPunctuation
+        
+        player8PointsInput.delegate = self
+        player8PointsInput.keyboardType = UIKeyboardType.NumbersAndPunctuation
+        
+        player8WinningsInput.delegate = self
+        player8WinningsInput.keyboardType = UIKeyboardType.NumbersAndPunctuation
+        
+        player9PointsInput.delegate = self
+        player9PointsInput.keyboardType = UIKeyboardType.NumbersAndPunctuation
+        
+        player9WinningsInput.delegate = self
+        player9WinningsInput.keyboardType = UIKeyboardType.NumbersAndPunctuation
+        
+        player10PointsInput.delegate = self
+        player10PointsInput.keyboardType = UIKeyboardType.NumbersAndPunctuation
+        
+        player10WinningsInput.delegate = self
+        player10WinningsInput.keyboardType = UIKeyboardType.NumbersAndPunctuation
+    }
+    
+    //UITextFieldDelegate events and related methods
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange,
+        replacementString string: String) -> Bool {
+            //We ignore any change that doesn't add characters to the text field.
+            //These changes are things like character deletions and cuts, as well as moving the insertion point.
+            
+            //We still return true to all the change to take place
+            if string.characters.count == 0{
+                return true
+            }
+            
+            //Check to see if the text field contents stell fit the constraints with the new content added to it
+            let currentText = textField.text ?? ""
+            let prospectiveText = (currentText as NSString).stringByReplacingCharactersInRange(range, withString: string)
+            
+            switch textField{
+                
+            case player1PointsInput:
+                return prospectiveText.isNumeric() &&
+                    prospectiveText.characters.count <= 4
+                
+            case player1WinningsInput:
+                return prospectiveText.isNumeric() &&
+                    prospectiveText.characters.count <= 5
+                
+            case player2PointsInput:
+                return prospectiveText.isNumeric() &&
+                    prospectiveText.characters.count <= 4
+                
+            case player2WinningsInput:
+                return prospectiveText.isNumeric() &&
+                    prospectiveText.characters.count <= 5
+                
+            case player3PointsInput:
+                return prospectiveText.isNumeric() &&
+                    prospectiveText.characters.count <= 4
+                
+            case player3WinningsInput:
+                return prospectiveText.isNumeric() &&
+                    prospectiveText.characters.count <= 5
+                
+            case player4PointsInput:
+                return prospectiveText.isNumeric() &&
+                    prospectiveText.characters.count <= 4
+                
+            case player4WinningsInput:
+                return prospectiveText.isNumeric() &&
+                    prospectiveText.characters.count <= 5
+                
+            case player5PointsInput:
+                return prospectiveText.isNumeric() &&
+                    prospectiveText.characters.count <= 4
+                
+            case player5WinningsInput:
+                return prospectiveText.isNumeric() &&
+                    prospectiveText.characters.count <= 5
+                
+            case player6PointsInput:
+                return prospectiveText.isNumeric() &&
+                    prospectiveText.characters.count <= 4
+                
+            case player6WinningsInput:
+                return prospectiveText.isNumeric() &&
+                    prospectiveText.characters.count <= 5
+                
+            case player7PointsInput:
+                return prospectiveText.isNumeric() &&
+                    prospectiveText.characters.count <= 4
+                
+            case player7WinningsInput:
+                return prospectiveText.isNumeric() &&
+                    prospectiveText.characters.count <= 5
+                
+            case player8PointsInput:
+                return prospectiveText.isNumeric() &&
+                    prospectiveText.characters.count <= 4
+                
+            case player8WinningsInput:
+                return prospectiveText.isNumeric() &&
+                    prospectiveText.characters.count <= 5
+                
+            case player9PointsInput:
+                return prospectiveText.isNumeric() &&
+                    prospectiveText.characters.count <= 4
+                
+            case player9WinningsInput:
+                return prospectiveText.isNumeric() &&
+                    prospectiveText.characters.count <= 5
+                
+            case player10PointsInput:
+                return prospectiveText.isNumeric() &&
+                    prospectiveText.characters.count <= 4
+                
+            case player10WinningsInput:
+                return prospectiveText.isNumeric() &&
+                    prospectiveText.characters.count <= 5
+                
+            default:
+                return true
+            }
+            
+            
     }
 
     override func didReceiveMemoryWarning() {
