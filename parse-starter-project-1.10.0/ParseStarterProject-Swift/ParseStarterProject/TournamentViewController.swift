@@ -74,11 +74,11 @@ class TournamentViewController: UIViewController, UITableViewDelegate, UITableVi
         self.loadTourneyData()
     }
 
-    func tableView(tourneyTable: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.tourneyArray.count
     }
     
-    func tableView(tourneyTable: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = self.tourneyTable.dequeueReusableCellWithIdentifier("tourneyCell")! as UITableViewCell
         
         let tempObject = tourneyArray.objectAtIndex(indexPath.row) as! PFObject
@@ -88,7 +88,7 @@ class TournamentViewController: UIViewController, UITableViewDelegate, UITableVi
     
 
     
-    func tableView(tourneyTable: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
         if editingStyle == UITableViewCellEditingStyle.Delete{
             
@@ -102,7 +102,7 @@ class TournamentViewController: UIViewController, UITableViewDelegate, UITableVi
         }
     }
     
-    func tableView(tourneyTable: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
     
         performSegueWithIdentifier("TournamentDetailView", sender: self)
     }

@@ -123,11 +123,11 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
 
 
-    func tableView(playerTable: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.playerArray.count
     }
     
-    func tableView(playerTable: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = self.playerTable.dequeueReusableCellWithIdentifier("playerCell")! as UITableViewCell
         
         let tempObject = playerArray.objectAtIndex(indexPath.row) as! PFObject
@@ -136,7 +136,7 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-    func tableView(playerTable: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
         if editingStyle == UITableViewCellEditingStyle.Delete{
             
@@ -149,7 +149,7 @@ class PlayerViewController: UIViewController, UITableViewDelegate, UITableViewDa
             }
         }
     }
-    func tableView(playerTable: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         performSegueWithIdentifier("segueToEditPlayer", sender: self)
     }
 

@@ -56,6 +56,8 @@ class TimerViewController: UIViewController {
     }
     
     override func viewWillAppear(animated: Bool) {
+        
+        prevBtn.enabled = false
         if (play.enabled.boolValue == true && pause.enabled.boolValue == true){
             loadData1()
         }

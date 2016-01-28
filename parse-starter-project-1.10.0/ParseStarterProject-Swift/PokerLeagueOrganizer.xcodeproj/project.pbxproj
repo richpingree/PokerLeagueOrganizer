@@ -16,6 +16,7 @@
 		70180E161C4C15D20043FEF6 /* prevBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 70180E101C4C15D10043FEF6 /* prevBtn.png */; };
 		70180E171C4C15D20043FEF6 /* redBtn.png in Resources */ = {isa = PBXBuildFile; fileRef = 70180E111C4C15D10043FEF6 /* redBtn.png */; };
 		70180E191C4C34110043FEF6 /* alarm.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 70180E181C4C34110043FEF6 /* alarm.mp3 */; };
+		70180E621C598A2F0043FEF6 /* StringUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70180E611C598A2F0043FEF6 /* StringUtils.swift */; };
 		70CB27FE1C319B4400EA610E /* TimerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CB27FD1C319B4400EA610E /* TimerViewController.swift */; };
 		70CB28001C32C86900EA610E /* BlindsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70CB27FF1C32C86900EA610E /* BlindsViewController.swift */; };
 		70D020C41C382E4400352726 /* TournamentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70D020C31C382E4400352726 /* TournamentViewController.swift */; };
@@ -48,6 +49,7 @@
 		70180E101C4C15D10043FEF6 /* prevBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = prevBtn.png; sourceTree = "<group>"; };
 		70180E111C4C15D10043FEF6 /* redBtn.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = redBtn.png; sourceTree = "<group>"; };
 		70180E181C4C34110043FEF6 /* alarm.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = alarm.mp3; sourceTree = "<group>"; };
+		70180E611C598A2F0043FEF6 /* StringUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringUtils.swift; sourceTree = "<group>"; };
 		70CB27FD1C319B4400EA610E /* TimerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerViewController.swift; sourceTree = "<group>"; };
 		70CB27FF1C32C86900EA610E /* BlindsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BlindsViewController.swift; sourceTree = "<group>"; };
 		70D020C31C382E4400352726 /* TournamentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TournamentViewController.swift; sourceTree = "<group>"; };
@@ -144,6 +146,7 @@
 				70D020D51C41F3A700352726 /* RulesViewController.swift */,
 				70180E081C48AB550043FEF6 /* EditPlayerViewController.swift */,
 				70180E0A1C4B1DB70043FEF6 /* ForgotPasswordViewController.swift */,
+				70180E611C598A2F0043FEF6 /* StringUtils.swift */,
 			);
 			path = ParseStarterProject;
 			sourceTree = "<group>";
@@ -274,6 +277,7 @@
 				81BA814D1A49DA1800E65899 /* ViewController.swift in Sources */,
 				70D020C81C382ED900352726 /* TournamentDetailsViewController.swift in Sources */,
 				81BA814B1A49DA1800E65899 /* AppDelegate.swift in Sources */,
+				70180E621C598A2F0043FEF6 /* StringUtils.swift in Sources */,
 				70D020C61C382E8600352726 /* TournamentFormViewController.swift in Sources */,
 				70D020D61C41F3A700352726 /* RulesViewController.swift in Sources */,
 				70D020CA1C382F7A00352726 /* PlayerViewController.swift in Sources */,

@@ -13,7 +13,7 @@ import ObjectiveC
 
 
 
-class BlindsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class BlindsViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate {
 
     
     @IBOutlet weak var timeInput: UITextField!
@@ -36,13 +36,75 @@ class BlindsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         // Do any additional setup after loading the view.
         blindsTable.delegate = self
         blindsTable.dataSource = self
-        //self.blindsTable.registerClass(UITableViewCell.self, forCellReuseIdentifier: "blindCell")
+       
+        initializeTextFields()
+        
+        //loads data from Parse
         loadData1()
         
     }
     
+    //Designate this class as the text fields' delegate and set their keyboards while we're at it
+    func initializeTextFields(){
+        timeInput.delegate = self
+        timeInput.keyboardType = UIKeyboardType.NumbersAndPunctuation
+        
+        anteInput.delegate = self
+        anteInput.keyboardType = UIKeyboardType.NumberPad
+        
+        smallInput.delegate = self
+        smallInput.keyboardType = UIKeyboardType.NumberPad
+        
+        bigInput.delegate = self
+        bigInput.keyboardType = UIKeyboardType.NumberPad
+    }
     
+    //Tap outside a text field to dismiss the keyboard
+    @IBAction func userTappedBackground(sender: AnyObject) {
+        view.endEditing(true)
+    }
     
+    //UITextFieldDelegate events and related methods
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange,
+        replacementString string: String) -> Bool {
+        //We ignore any change that doesn't add characters to the text field.
+        //These changes are things like character deletions and cuts, as well as moving the insertion point.
+            
+        //We still return true to all the change to take place
+            if string.characters.count == 0{
+                return true
+            }
+            
+            //Check to see if the text field contents stell fit the constraints with the new content added to it
+            let currentText = textField.text ?? ""
+            let prospectiveText = (currentText as NSString).stringByReplacingCharactersInRange(range, withString: string)
+            
+            switch textField{
+                
+            case timeInput:
+                return prospectiveText.isNumeric() &&
+                prospectiveText.characters.count <= 2
+                
+            case anteInput:
+                return prospectiveText.isNumeric() &&
+                prospectiveText.characters.count <= 5
+                
+            case smallInput:
+                return prospectiveText.isNumeric() &&
+                prospectiveText.characters.count <= 5
+                
+            case bigInput:
+                return prospectiveText.isNumeric() &&
+                prospectiveText.characters.count <= 5
+                
+            default:
+                return true
+            }
+            
+            
+    }
+    
+    //pulls data from parse
     func loadData1() {
         
         self.blindArray.removeAllObjects()
@@ -73,11 +135,11 @@ class BlindsViewController: UIViewController, UITableViewDelegate, UITableViewDa
     }
     
 
-    func tableView(blindsTable: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return self.blindArray.count
     }
     
-    func tableView(blindsTable: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell:UITableViewCell = self.blindsTable.dequeueReusableCellWithIdentifier("blindCell")! as UITableViewCell
         
         let tempObject = blindArray.objectAtIndex(indexPath.row) as! PFObject
@@ -93,7 +155,7 @@ class BlindsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         return cell
     }
     
-    func tableView(blindsTable: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         
         if editingStyle == UITableViewCellEditingStyle.Delete{
             
@@ -107,19 +169,19 @@ class BlindsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         }
     }
     
-    func tableView(blindTable: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         //puts table in edit mode
         
         //self.blindsTable.editing = !self.editing
     }
     
     //allows for row to move
-//    func tableView(blindTable: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+//    func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
 //        return true
 //    }
 
     //moves the row
-//    func tableView(blindTable: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
+//    func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
 //        
 //        let itemToMove = self.blindArray[fromIndexPath.row]
 //        self.blindArray.removeObjectAtIndex(fromIndexPath.row)
