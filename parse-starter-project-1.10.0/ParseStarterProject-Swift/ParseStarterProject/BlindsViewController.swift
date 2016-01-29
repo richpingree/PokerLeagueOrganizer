@@ -150,7 +150,7 @@ class BlindsViewController: UIViewController, UITableViewDelegate, UITableViewDa
         let bigString = "Big Blind: " + (tempObject.objectForKey("Big") as? String)!
         
         cell.textLabel?.text = timeString + " min"
-        cell.detailTextLabel?.text = anteString + " " + smallString + " " + bigString
+        cell.detailTextLabel?.text = anteString + "    " + smallString + "    " + bigString
         
         return cell
     }
